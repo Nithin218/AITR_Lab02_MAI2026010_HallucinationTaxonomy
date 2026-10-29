@@ -123,6 +123,37 @@ Reason: Compatibility cannot be claimed before it has been tested. `pip check` p
 Source / evidence: PyPI JSON (selfcheckgpt 0.1.7, 2024-03-10); `setup.py` lists `transformers>=4.35, torch>=1.12, numpy, bert_score, spacy, nltk, openai, groq` (**VERIFIED**, fetched), although the PyPI metadata shows `requires_dist: null`. `modeling_selfcheck.py` imports spacy and bert_score at module level; `modeling_ngram.py` loads `en_core_web_sm` (**VERIFIED**, source). Local partial run: `env_verification_log.md` Run 0.
 Next actions: Student runs `notebooks/00_environment_check.ipynb` on Colab and shares the output.
 
+### D-012 | Debug: `pip_check` failed on Colab (Prompt 11)
+Date: 2026-10-30
+Stage: coding / debugging
+Observed (actual output, env Run 1): `pip check` listed 4 conflicts: ipython 7.34.0 requires jedi (not installed); gradio 6.30.0, gradio-client 2.7.2 and diffusers 0.42.0 require huggingface-hub ≥ 1.16 / ≥ 1.32, installed 0.36.2.
+Expected: no conflicts that affect the study.
+Confirmed: none of the four packages that declare those requirements is imported by this project. Every package we use is reported PASS, and the NLI, SelfCheck and Qwen checks ran.
+Hypothesis (INFERRED): our `transformers<5` bound installed transformers 4.57.6, which pulled huggingface-hub back below 1.0 and broke the preinstalled gradio and diffusers pins. This would be checked by comparing `pip freeze` before and after installing.
+Fix (smallest safe change): `check_pip` now fails only when the package *declaring* a broken requirement is one of ours. Unrelated conflicts are still recorded under `ignored_unrelated_conflicts`.
+Verification: `tests/test_env_check.py` (3 tests, run locally: all ok). (a) The verbatim Colab output gives 0 relevant and 4 ignored. (b) Edge case: conflicts declared by `bert-score` (dash/underscore spelling) and `selfcheckgpt` are reported. (c) Clean output.
+Rerun needed? No: no other check depends on `pip_check`. The next Colab run should show PASS with 4 ignored conflicts.
+
+### D-013 | Measured compute: E2 must shrink before the freeze; output length needs a pilot decision
+Date: 2026-10-30
+Stage: protocol (pre-freeze; **no main-set results have been seen**)
+Evidence (env Run 1, VERIFIED): greedy 15.1 tok/s; a batch of 10 × 400 tokens in 50.1 s; peak VRAM 8.09 GB; NLI 0.0761 s/pair.
+Estimate from these rates (INFERRED) for all 190 main topics:
+
+| Step | Estimate |
+|---|---|
+| Greedy main answers (190 × 400 tok) | ~84 min |
+| N = 10 samples | ~158 min |
+| DQ 950 refs × 3 × 10 | ~2 h |
+| IQ samples + LM judge | ~2.3 h |
+| D4 | ~16 min |
+| **Total** | **≈ 8.6 GPU-h** |
+
+That exceeds the protocol's 8 GPU-h hard stop. V1 ≈ 48 min.
+Proposed decision (student to confirm): **E2 uses 100 topics drawn from the 190 main topics** with `random.Random(2026)`, giving ≈ 4.5 GPU-h. This was the brief's original T ≈ 100. E1, V2 and R1 keep all 190 main topics.
+Second issue: the timing prompt's greedy answer **hit the 400-token cap**. Qwen writes "Author (year). **Title**. Venue" plus descriptions. With Agrawal's actual prompt (still to be copied), the pilot must check (a) whether answers finish within the cap (raise it to 600 if not) and (b) that the title parser handles markdown. Both are settled on pilot topics only.
+Status: PROPOSED, needs student sign-off.
+
 ---
 
 ## Protocol changes

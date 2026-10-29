@@ -105,12 +105,32 @@ def check_packages():
     return versions
 
 
+def _norm_pkg(name):
+    return name.lower().replace("_", "-")
+
+
+def split_conflicts(text, ours):
+    """Split `pip check` lines into conflicts raised by our packages and by unrelated preinstalled ones.
+
+    A line is relevant when the package that *declares* the requirement (first token) is one of ours.
+    Colab ships packages we never import (gradio, diffusers, ...); their unmet pins do not affect this study.
+    """
+    ours = {_norm_pkg(p) for p in ours}
+    relevant, ignored = [], []
+    for line in text.splitlines():
+        if not line.strip() or line.startswith("No broken requirements"):
+            continue
+        (relevant if _norm_pkg(line.split()[0]) in ours else ignored).append(line.strip())
+    return relevant, ignored
+
+
 def check_pip():
     out = subprocess.run([sys.executable, "-m", "pip", "check"], capture_output=True, text=True)
     text = (out.stdout + out.stderr).strip()
-    if out.returncode != 0:
-        raise RuntimeError(f"pip check reports conflicts: {text}")
-    return text
+    relevant, ignored = split_conflicts(text, REQUIRED + GPU_ONLY)
+    if relevant:
+        raise RuntimeError(f"pip check reports conflicts in our packages: {relevant}; unrelated: {ignored}")
+    return {"conflicts_in_our_packages": [], "ignored_unrelated_conflicts": ignored}
 
 
 def check_seed():
