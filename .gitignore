@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# downloaded data is re-fetched by scripts (see data/README.md)
+data/raw/*
+!data/raw/.gitkeep
+# never commit credentials
+*.key
+.env

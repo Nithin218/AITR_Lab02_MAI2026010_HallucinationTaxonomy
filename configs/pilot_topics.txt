@@ -1,0 +1,11 @@
+# source acm_ccs_200.titles sha256=94422a812ca0a6b3e1046336d103d183d702d8d8ac5a80a96e9e117e86677ee0 seed=2026
+Logic: Logic and verification
+Electronic design automation: Logic synthesis
+Embedded and cyber-physical systems: Sensor networks
+Randomness, geometry and discrete structures: Generating random combinatorial structures
+Design and analysis of algorithms: Concurrent algorithms
+Machine learning: Learning paradigms
+Mathematical analysis: Numerical analysis
+Education: Distance learning
+Information theory: Coding theory
+Information systems applications: Mobile information processing systems

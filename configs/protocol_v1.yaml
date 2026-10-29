@@ -1,0 +1,57 @@
+# Protocol v1 settings (docs/07_experiment_protocol.md). DRAFT until tagged protocol-v1.
+# Values marked TBD-PILOT are set on the pilot topics only, then frozen.
+
+seeds:
+  global: 2026
+  pilot_split: 2026
+  bootstrap: 7
+  n_subsample: 11
+
+data:
+  agrawal_repo: microsoft/hallucinated-references
+  agrawal_commit: bf3ef5f3de89e49a8a4d31bb3c97ba8c777d9c08   # main @ 2024-07-14, read 2026-10-29
+  agrawal_files:
+    - acm_ccs_200.titles
+    - gpt-4_results.csv
+    - gpt-3.5-turbo_results.csv
+    - text-davinci-003_results.csv
+    - llama-2-7b-chat.csv
+    - llama-2-13b-chat.csv
+    - llama-2-70b-chat.csv
+  wikibio_dataset: potsawee/wiki_bio_gpt3_hallucination
+  wikibio_split: evaluation
+  n_pilot_topics: 10
+
+baseline:
+  selfcheckgpt_version: 0.1.7
+  selfcheckgpt_commit: 19b492a2a380931bf1ed0ca94a9565c9aa7b03e1   # main @ 2024-06-26, for reading source
+  nli_model: potsawee/deberta-v3-large-mnli
+  nli_max_length: 512
+  nli_batch_size: 32
+
+generator:
+  model: Qwen/Qwen2.5-7B-Instruct
+  revision: TBD-FIRST-LOAD          # record config._commit_hash from env check
+  quantization: nf4-4bit
+  compute_dtype: float16
+  k_titles: 5
+  main_max_new_tokens: 400
+  n_samples: 10
+  temperature: 1.0
+  top_p: 1.0
+  dq_samples: 10
+  iq_samples: 3
+
+oracle:
+  openalex_per_page: 5
+  crossref_rows: 5
+  similarity: rapidfuzz.fuzz.token_sort_ratio
+  tau: TBD-PILOT                    # default 90 unless pilot shows clear failure
+  partial_band: 15
+  mailto: TBD-STUDENT-EMAIL         # Crossref polite pool
+
+metrics:
+  primary: auroc
+  positive_label: hallucinated
+  bootstrap_resamples: 2000
+  n_sensitivity: [1, 2, 5, 10]

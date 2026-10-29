@@ -1,0 +1,23 @@
+# AI Assistance Log
+
+One entry per significant AI-assisted activity, following assignment §6, Prompt 18.
+
+| # | Date | Task | Tool / model | Prompt | AI proposal | Human decision | Verification method | Change / outcome |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 2026-10-29 | Workspace setup and review scope | Claude Code (Claude Opus 5.5) | Prompt 01 (assignment §6) | Created `research_decisions.md`, `docs/01_review_scope.md` and this log. Summarised the review from `main.tex`. | _[student: accept / edit]_ | _[student: compare the scope summary against your own understanding of the review]_ | Workspace files created |
+| 2 | 2026-10-29 | Gap extraction | Claude Code (Claude Opus 5.5) | Prompt 02 (assignment §6) | Five gaps (G1–G5) with line citations; ranking G1 > G2 > G4; ten claims to verify (V1–V10). Flagged a possible citation-scope mismatch at `main.tex` l.61. | _[student]_ | _[student: open the original papers for V1–V10]_ | `docs/02_gap_matrix.md` created |
+| 3 | 2026-10-29 | Literature-to-experiment mapping | Claude Code (Claude Opus 5.5) | Prompt 03 (assignment §6) | Mapped SelfCheckGPT, FActScore and semantic entropy. Fetched the SelfCheckGPT repo, HF dataset card and OpenAlex docs. Recommended SelfCheckGPT reproduction + transfer to citations, with an open-weight generator in Colab. | _[student]_ | _[student: re-open fetched links; check paper numbers vs. README]_ | `docs/03_literature_to_experiment_map.md`; D-004 to D-006 |
+| 4 | 2026-10-29 | Feasibility and novelty check | Claude Code (Claude Opus 5.5) | Prompt 04 | 2 web searches and 9 fetches. Found Agrawal et al. 2023 (closest prior work, missing from the review). Novelty matrix; access table; compute estimate; go/no-go = GO with conditions. | _[student]_ | _[student: run the search strings; read Agrawal full text]_ | `docs/04_feasibility_novelty.md`; D-007 |
+| 5 | 2026-10-29 | Research questions and brief | Claude Code (Claude Opus 5.5) | Prompt 05 | RQ1–RQ3 with hypotheses, decision rules and contradicting observations; one-page brief | _[student]_ | _[student: confirm thresholds; instructor review]_ | `docs/05_research_brief.md`; D-008 |
+| 6 | 2026-10-29 | Dataset and baseline sheet | Claude Code (Claude Opus 5.5) | Prompt 06 | Read the SelfCheckGPT source (default NLI checkpoint, scoring). Downloaded Agrawal data; inspected schema and label counts. Proposed reproducing from released scores and the judge-swap idea. | _[student]_ | _[student: re-download files; check counts]_ | `docs/06_dataset_baseline_sheet.md`; D-009 |
+| 7 | 2026-10-29 | Draft experiment protocol | Claude Code (Claude Opus 5.5) | Prompt 07 | V1/V2/E1/E2/R1 protocol, Mermaid diagram, seeds, metrics, threats, freeze checklist | _[student]_ | _[student: review and sign §11]_ | `docs/07_experiment_protocol.md`; D-010 |
+| 8 | 2026-10-29 | Environment and repository setup | Claude Code (Claude Opus 5.5) | Prompt 08 | Repo tree; `requirements.txt` ranges; `00_env_check.py` (10 checks); `01_make_pilot_split.py`; Colab notebook. Ran the CPU-only checks locally. | _[student]_ | _[student: run on Colab and paste output]_ | Repo created; `env_verification_log.md` Run 0; D-011 |
+
+AI limitations noted so far:
+- From the README alone, the AI first assumed that the generator would need to be run for every comparison. Inspecting the released CSVs showed that the samples already exist, and this changed the design (E1).
+- The AI's first recommendation (Prompts 02–03) framed G1 as an open gap. Its own Prompt 04 search found prior work (Agrawal et al.) that had already shown this. The original framing would have overclaimed novelty. This is a real example for the Prompt 18 audit.
+- Compute estimates in `docs/04` §6 are AI guesses, not measurements.
+- The AI first assumed (Prompt 02) that the SelfCheckGPT dataset was GPT-3 WikiBio from memory. A fetch in Prompt 03 confirmed it and also showed that 20 samples per passage are included. This changed the plan because no generator is needed for the baseline.
+- The Crossref documentation pages the AI fetched did not state access rules, so Crossref access is still UNKNOWN.
+- The AI read only `main.tex`. It did not read the original 23 papers, so every statement about what those papers report is unverified.
+- The AI's recollection of SelfCheckGPT's dataset and code (G4) is from memory and is explicitly marked as unchecked.

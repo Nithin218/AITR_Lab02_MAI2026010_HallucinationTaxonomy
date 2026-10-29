@@ -1,0 +1,24 @@
+# Proposed dependency ranges (Prompt 08). These are NOT verified as compatible.
+# After installing on Colab, run `pip check` and save the exact versions with
+#   pip freeze > requirements-lock.txt
+# The lock file is the record of what the experiments actually ran on.
+#
+# torch is NOT listed: use the build that ships with Colab (matches its CUDA driver).
+
+transformers>=4.45,<5        # Qwen2.5 chat template + DeBERTa-v2; upper bound until tested
+accelerate>=0.33             # device_map="auto" for 4-bit loading
+bitsandbytes>=0.43           # 4-bit NF4 quantisation (GPU only)
+sentencepiece>=0.2           # DebertaV2Tokenizer
+datasets>=2.20               # wiki_bio_gpt3_hallucination
+selfcheckgpt==0.1.7          # latest on PyPI (uploaded 2024-03-10); pinned because it is the baseline
+spacy>=3.7                   # imported at top of selfcheckgpt.modeling_selfcheck
+bert_score>=0.3.13           # imported at top of selfcheckgpt.modeling_selfcheck
+nltk>=3.8                    # selfcheckgpt.modeling_ngram
+rapidfuzz>=3.6               # title similarity for the oracle
+requests>=2.31
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.3            # roc_auc_score, average_precision_score
+pyyaml>=6.0
+matplotlib>=3.8
+# SelfCheckNgram also needs the spaCy model:  python -m spacy download en_core_web_sm
