@@ -172,6 +172,16 @@ Evidence (VERIFIED, upstream code at `bf3ef5f`):
 - `code/src/llama_run.py`: DQ score = fraction of sampled answers containing "yes". IQ judge = Llama chat at temperature 0, prompt "…how much overlap is there in the author names… 0–100%…", averaged over the 3 unordered pairs. `IQ_ans*` = the full answer with the title replaced by "provided reference" and "AUTHORS:" removed.
 - `code/src/prompts.py`, saved verbatim to `docs/upstream/agrawal_prompts.py`: the main query asks for **titles only** ("Just output the titles. Do not mention the authors."). The 400-token-cap concern in D-013 came from our own timing prompt and is probably moot. Still check it on the pilot.
 
+### D-016 | D-013 and D-014 approved; V2 targets pre-registered
+Date: 2026-10-30
+Stage: protocol / baseline
+Decision: The student approved both proposals ("do it", 2026-10-30).
+- E2 uses 100 main topics (`configs/e2_topics.txt`, `random.Random(2026)` on the main list; 0 overlap with pilot, pilot/main files unchanged).
+- 13B is deduplicated for E1/R1 primary and used as released for V2.
+- V2 targets: all 36 published AUCs extracted from the PDF figures. Tolerance ±0.005, committed before computing (`baseline_validation.md`).
+Important methodological note: Agrawal's AUC procedure **auto-flips** detectors that fall below 0.5. That is replicated in V2 only. **Our E1/E2 analyses must not auto-flip.** The score orientation is fixed in protocol §3, so a detector worse than chance is reported as < 0.5.
+Source / evidence: arXiv PDF v3 pp. 7 and 12 (text extracted, VERIFIED); `roc-utils` 0.2.2 `_roc.py` and `_sampling.py` (read, VERIFIED).
+
 ---
 
 ## Protocol changes

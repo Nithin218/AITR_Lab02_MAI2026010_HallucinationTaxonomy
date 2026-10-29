@@ -4,6 +4,7 @@
 seeds:
   global: 2026
   pilot_split: 2026
+  e2_subset: 2026            # D-013: 100 of the 190 main topics for E2
   bootstrap: 7
   n_subsample: 11
 
@@ -21,6 +22,8 @@ data:
   wikibio_dataset: potsawee/wiki_bio_gpt3_hallucination
   wikibio_split: evaluation
   n_pilot_topics: 10
+  n_e2_topics: 100           # D-013 (approved 2026-10-30)
+  llama13b_dedup: primary    # D-014: E1/R1 primary = deduplicated; V2 = as released
 
 baseline:
   selfcheckgpt_version: 0.1.7

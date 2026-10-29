@@ -1,0 +1,101 @@
+# source acm_ccs_200.titles sha256=94422a812ca0a6b3e1046336d103d183d702d8d8ac5a80a96e9e117e86677ee0 e2_seed=2026 (subset of main)
+Operations research: Decision analysis
+Operations research: Consumer products
+Electronic design automation: Timing analysis
+Document management and text processing: Document capture
+Software notations and tools: Software maintenance tools
+Visualization: Visualization theory, concepts and paradigms
+Design and analysis of algorithms: Parallel algorithms
+Enterprise computing: Enterprise modeling
+Electronic commerce: Online banking
+Cross-computing tools and techniques: Measurement
+Law, social and behavioral sciences: Psychology
+Systems security: File system security
+Power and energy: Thermal issues
+Accessibility: Accessibility design and evaluation methods
+Professional topics: Management of computing and information systems
+Enterprise computing: Enterprise ontologies, taxonomies and vocabularies
+World Wide Web: Web data description languages
+Computer forensics: System forensics
+Logic: Equational logic and rewriting
+Information retrieval: Users and interactive retrieval
+Communication hardware, interfaces and storage: Displays and imagers
+Logic: Separation logic
+Dependable and fault-tolerant systems and networks: Processors and memory architectures
+Electronic commerce: Secure online transactions
+Continuous mathematics: Topology
+Dependable and fault-tolerant systems and networks: Maintainability and maintenance
+Security in hardware: Hardware reverse engineering
+Enterprise computing: Reference models
+Computer graphics: Graphics systems and interfaces
+Computing / technology policy: Computer crime
+Computers in other domains: Personal computers and PC applications
+Network properties: Network reliability
+Security services: Authorization
+Life and medical sciences: Bioinformatics
+Security in hardware: Embedded systems security
+Very large scale integration design: Design reuse and communication-based design
+Very large scale integration design: VLSI system specification and constraints
+Life and medical sciences: Metabolomics / metabonomics
+Communication hardware, interfaces and storage: External storage
+Network components: Logical nodes
+Hardware test: Board- and system-level test
+Communication hardware, interfaces and storage: Electro-mechanical devices
+Physical sciences and engineering: Astronomy
+Logic: Linear logic
+Operations research: Forecasting
+Network components: Wireless access points, base stations and infrastructure
+Software and application security: Web application security
+Logic: Modal and temporal logics
+World Wide Web: Web searching and information discovery
+Security in hardware: Hardware attacks and countermeasures
+Network protocols: Network protocol design
+Computing / technology policy: Government technology policy
+Information systems applications: Digital libraries and archives
+Electronic design automation: Hardware description languages and compilation
+Emerging technologies: Quantum technologies
+Dependable and fault-tolerant systems and networks: Availability
+Cross-computing tools and techniques: Design
+Software creation and management: Software post-development issues
+Systems security: Distributed systems security
+Database and storage security: Information accountability and usage control
+Arts and humanities: Media arts
+Very large scale integration design: Economics of chip design and manufacturing
+Integrated circuits: Digital switches
+Mathematical analysis: Calculus
+Real-time systems: Real-time languages
+Systems security: Firewalls
+Collaborative and social computing: Collaborative and social computing design and evaluation methods
+Network types: Ad hoc networks
+Document management and text processing: Document searching
+Network components: End nodes
+Design and analysis of algorithms: Parameterized complexity and exact algorithms
+Communication hardware, interfaces and storage: Printers
+Models of computation: Concurrency
+Dependable and fault-tolerant systems and networks: Secondary storage organization
+Operations research: Computer-aided manufacturing
+Artificial intelligence: Planning and scheduling
+Physical sciences and engineering: Archaeology
+Information storage systems: Record storage systems
+Formal languages and automata theory: Automata over infinite objects
+Intrusion/anomaly detection and malware mitigation: Malware and its mitigation
+Machine learning: Machine learning approaches
+Software creation and management: Designing software
+Network security: Security protocols
+Computing / technology policy: Commerce policy
+Dependable and fault-tolerant systems and networks: Redundancy
+Information retrieval: Information retrieval query processing
+Computational complexity and cryptography: Quantum complexity theory
+Logic: Type theory
+Information systems applications: Enterprise information systems
+Physical sciences and engineering: Mathematics and statistics
+Logic: Proof theory
+Enterprise computing: IT governance
+Formal languages and automata theory: Grammars and context-free languages
+Semantics and reasoning: Program semantics
+Mathematical analysis: Integral equations
+Very large scale integration design: Application-specific VLSI designs
+Operations research: Marketing
+Electronic design automation: Methodologies for EDA
+Software notations and tools: General programming languages
+Information systems applications: Multimedia information systems
