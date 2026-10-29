@@ -154,6 +154,24 @@ Proposed decision (student to confirm): **E2 uses 100 topics drawn from the 190 
 Second issue: the timing prompt's greedy answer **hit the 400-token cap**. Qwen writes "Author (year). **Title**. Venue" plus descriptions. With Agrawal's actual prompt (still to be copied), the pilot must check (a) whether answers finish within the cap (raise it to 600 if not) and (b) that the title parser handles markdown. Both are settled on pilot topics only.
 Status: PROPOSED, needs student sign-off.
 
+### D-014 | Agrawal Llama-2-13B file contains 200 duplicated references
+Date: 2026-10-30
+Stage: baseline / data (pre-freeze; **no detector scores computed**)
+Evidence (VERIFIED, executed by `tests/test_agrawal.py`): `llama-2-13b-chat.csv` has 1,000 rows but only 160 of the 200 topics. Rows 700–899 repeat 200 (topic, title) pairs from earlier rows. The copies have identical `bing_return` but differently re-sampled IQ/DQ answers (IQ_llama_prob differs in 146/200 groups). 40 topics are absent. The other five files have 200 topics × 5 references and no duplicates.
+Implication (INFERRED): the paper's 13B hallucination rate (76.7%) equals the rate in the file *with* duplicates (767/1000), so the published 13B AUC was probably computed on the duplicated file. Deduplicated: 800 references, 612 hallucinated (76.5%).
+Proposed decision (student to confirm):
+- V2 (reproduce published numbers) uses the file **as released**, because that is what the paper measured.
+- E1 and R1 primary analysis use **deduplicated** 13B data (first copy kept, `agrawal.drop_duplicate_refs`). The as-released version is reported as a sensitivity check.
+- Report the defect in the paper's data section. Optionally notify the upstream authors. A GitHub issue is outward-facing, so the student decides.
+
+### D-015 | Agrawal prompts and score definitions obtained
+Date: 2026-10-30
+Stage: baseline
+Evidence (VERIFIED, upstream code at `bf3ef5f`):
+- `code/metrics.ipynb`: GPT files use `neural_ans1_prob` = IQ and `neural_ans2/3/4_prob` = DQ1/2/3. Score = 1 − prob. y = 0 if `bing_return == True`. Reported AUC = **mean over 100 bootstrap resamples** (`plot_roc_bootstrap`, random_state 42), with a DeLong CI. It is not a single point estimate, so V2 must compute the same, or expect small differences.
+- `code/src/llama_run.py`: DQ score = fraction of sampled answers containing "yes". IQ judge = Llama chat at temperature 0, prompt "…how much overlap is there in the author names… 0–100%…", averaged over the 3 unordered pairs. `IQ_ans*` = the full answer with the title replaced by "provided reference" and "AUTHORS:" removed.
+- `code/src/prompts.py`, saved verbatim to `docs/upstream/agrawal_prompts.py`: the main query asks for **titles only** ("Just output the titles. Do not mention the authors."). The 400-token-cap concern in D-013 came from our own timing prompt and is probably moot. Still check it on the pilot.
+
 ---
 
 ## Protocol changes

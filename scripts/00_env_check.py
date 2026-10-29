@@ -232,6 +232,8 @@ def check_oracle(mailto):
     from rapidfuzz import fuzz
     if not mailto:
         raise Skip("pass --mailto <email> (Crossref polite pool asks for it)")
+    if "@" not in mailto or "YOUR_EMAIL" in mailto.upper():
+        raise RuntimeError(f"--mailto looks like a placeholder ({mailto!r}); pass a real contact email")
     headers = {"User-Agent": f"AITR-Lab02-env-check (mailto:{mailto})"}
 
     def norm(s):

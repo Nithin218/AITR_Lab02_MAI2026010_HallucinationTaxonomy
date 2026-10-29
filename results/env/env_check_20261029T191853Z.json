@@ -1,0 +1,448 @@
+{
+  "utc": "20261029T191853Z",
+  "args": {
+    "mailto": "YOUR_EMAIL_HERE",
+    "qwen": true
+  },
+  "results": [
+    {
+      "check": "system",
+      "status": "PASS",
+      "seconds": 1.9,
+      "detail": {
+        "python": "3.13.16",
+        "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+        "nvidia_smi": "Tesla T4, 580.82.07, 15360 MiB",
+        "torch_cuda_available": true,
+        "torch_cuda_version": "13.0",
+        "gpu": "Tesla T4",
+        "gpu_mem_gb": 15.6
+      }
+    },
+    {
+      "check": "packages",
+      "status": "PASS",
+      "seconds": 0.1,
+      "detail": {
+        "torch": "2.11.0+cu130",
+        "transformers": "4.57.6",
+        "datasets": "4.8.5",
+        "selfcheckgpt": "0.1.7",
+        "spacy": "3.8.16",
+        "bert_score": "0.3.13",
+        "nltk": "3.9.1",
+        "sentencepiece": "0.2.2",
+        "rapidfuzz": "3.14.6",
+        "requests": "2.32.4",
+        "pandas": "2.2.3",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1",
+        "pyyaml": "6.0.3",
+        "accelerate": "1.15.0",
+        "bitsandbytes": "0.50.2"
+      }
+    },
+    {
+      "check": "pip_check",
+      "status": "FAIL",
+      "seconds": 2.1,
+      "detail": "RuntimeError: pip check reports conflicts: ipython 7.34.0 requires jedi, which is not installed.\ngradio 6.30.0 has requirement huggingface-hub<3.0,>=1.16.0, but you have huggingface-hub 0.36.2.\ngradio-client 2.7.2 has requirement huggingface-hub<3.0,>=1.16.0, but you have huggingface-hub 0.36.2.\ndiffusers 0.42.0 has requirement huggingface-hub<3.0,>=1.32.0, but you have huggingface-hub 0.36.2."
+    },
+    {
+      "check": "seed_control",
+      "status": "PASS",
+      "seconds": 1.1,
+      "detail": {
+        "numpy": [
+          0.21934563492692294,
+          0.4130117368786672,
+          0.9766354781603012
+        ],
+        "torch_cpu": [
+          0.15248113870620728,
+          0.2519153356552124,
+          0.7310043573379517
+        ],
+        "torch_cuda": [
+          0.4310784935951233,
+          0.7051945924758911,
+          0.3247464895248413
+        ]
+      }
+    },
+    {
+      "check": "agrawal_data",
+      "status": "PASS",
+      "seconds": 4.9,
+      "detail": {
+        "acm_ccs_200.titles": {
+          "lines": 200,
+          "sha256": "94422a812ca0a6b3e1046336d103d183d702d8d8ac5a80a96e9e117e86677ee0"
+        },
+        "gpt-4_results.csv": {
+          "rows": 1000,
+          "bing_return_False": 468,
+          "columns": [
+            "",
+            "gen_title",
+            "title",
+            "model_answer_main_query",
+            "bing_return",
+            "model_ans_1",
+            "model_ans_2",
+            "model_ans_3",
+            "neural_ans1_list",
+            "neural_ans1_prob",
+            "neural_ans2_list",
+            "neural_ans2_prob",
+            "neural_ans3_list",
+            "neural_ans3_prob",
+            "neural_ans4_list",
+            "neural_ans4_prob"
+          ],
+          "sha256": "3fd32d5e9dc1657a381b94f88817b64b4a0e7bb007107f4db18b3206cdc7a22f"
+        },
+        "gpt-3.5-turbo_results.csv": {
+          "rows": 1000,
+          "bing_return_False": 596,
+          "columns": [
+            "",
+            "gen_title",
+            "title",
+            "model_answer_main_query",
+            "bing_return",
+            "model_ans_1",
+            "model_ans_2",
+            "model_ans_3",
+            "neural_ans1_list",
+            "neural_ans1_prob",
+            "neural_ans2_list",
+            "neural_ans2_prob",
+            "neural_ans3_list",
+            "neural_ans3_prob",
+            "neural_ans4_list",
+            "neural_ans4_prob"
+          ],
+          "sha256": "102e325ba10c3e0f9d5e194fd1da8f3aa0dcb6dc58956f0bdec83cb12e67700e"
+        },
+        "text-davinci-003_results.csv": {
+          "rows": 1000,
+          "bing_return_False": 736,
+          "columns": [
+            "",
+            "gen_title",
+            "title",
+            "model_answer_main_query",
+            "bing_return",
+            "model_ans_1",
+            "model_ans_2",
+            "model_ans_3",
+            "neural_ans1_list",
+            "neural_ans1_prob",
+            "neural_ans2_list",
+            "neural_ans2_prob",
+            "neural_ans3_list",
+            "neural_ans3_prob",
+            "neural_ans4_list",
+            "neural_ans4_prob"
+          ],
+          "sha256": "f3135794edcc6ddb11697b15d2025b1a9b1867fc9c973e77c4d2deb4bb1de1f4"
+        },
+        "llama-2-7b-chat.csv": {
+          "rows": 1000,
+          "bing_return_False": 683,
+          "columns": [
+            "gen_title",
+            "concept",
+            "model_answer_main_query",
+            "bing_return",
+            "bing_return_results",
+            "IQ_full_ans1",
+            "IQ_full_ans2",
+            "IQ_full_ans3",
+            "IQ_ans1",
+            "IQ_ans2",
+            "IQ_ans3",
+            "IQ_llama_prob",
+            "IQ_llama_ans_list",
+            "DQ1_ans_sample",
+            "DQ1_prob_sample",
+            "DQ2_ans_sample",
+            "DQ2_prob_sample",
+            "DQ3_ans_sample",
+            "DQ3_prob_sample"
+          ],
+          "sha256": "10a4fd1cc4a5e27379599a981da4d96c581e60510aad8fccbfb9e07817e3ca6a"
+        },
+        "llama-2-13b-chat.csv": {
+          "rows": 1000,
+          "bing_return_False": 767,
+          "columns": [
+            "gen_title",
+            "concept",
+            "model_answer_main_query",
+            "bing_return",
+            "bing_return_results",
+            "DQ1_ans",
+            "DQ2_ans",
+            "DQ3_ans",
+            "IQ_ans1",
+            "IQ_ans2",
+            "IQ_ans3",
+            "IQ_full_ans1",
+            "IQ_full_ans2",
+            "IQ_full_ans3",
+            "IQ_and_list",
+            "IQ_llama_prob",
+            "IQ_llama_ans_list",
+            "DQ1_ans_sample",
+            "DQ1_prob_sample",
+            "DQ2_ans_sample",
+            "DQ2_prob_sample",
+            "DQ3_ans_sample",
+            "DQ3_prob_sample"
+          ],
+          "sha256": "a40a5a23c251b80f6210ddd137c4934a4c67e558efc3246b7627738d3a6d10fb"
+        },
+        "llama-2-70b-chat.csv": {
+          "rows": 1000,
+          "bing_return_False": 662,
+          "columns": [
+            "gen_title",
+            "concept",
+            "model_answer_main_query",
+            "IQ_full_ans1",
+            "IQ_full_ans2",
+            "IQ_full_ans3",
+            "IQ_ans1",
+            "IQ_ans2",
+            "IQ_ans3",
+            "IQ_llama_prob",
+            "IQ_llama_ans_list",
+            "DQ1_ans_sample",
+            "DQ1_prob_sample",
+            "DQ2_ans_sample",
+            "DQ2_prob_sample",
+            "DQ3_ans_sample",
+            "DQ3_prob_sample",
+            "bing_return",
+            "bing_return_results"
+          ],
+          "sha256": "52c912ebf2fb17e0315d6320bdc0a673f30fdae96f3da39076255876e9eb80f8"
+        }
+      }
+    },
+    {
+      "check": "wikibio_data",
+      "status": "PASS",
+      "seconds": 5.0,
+      "detail": {
+        "rows": 238,
+        "columns": [
+          "gpt3_text",
+          "wiki_bio_text",
+          "gpt3_sentences",
+          "annotation",
+          "wiki_bio_test_idx",
+          "gpt3_text_samples"
+        ],
+        "n_sentences": 1908,
+        "label_counts": {
+          "major_inaccurate": 761,
+          "minor_inaccurate": 631,
+          "accurate": 516
+        },
+        "samples_per_passage": [
+          20
+        ]
+      }
+    },
+    {
+      "check": "nli_label_order",
+      "status": "PASS",
+      "seconds": 36.1,
+      "detail": {
+        "model": "potsawee/deberta-v3-large-mnli",
+        "id2label": {
+          "0": "LABEL_0",
+          "1": "LABEL_1"
+        },
+        "p_contradiction_entailed_pair": 0.0002,
+        "p_contradiction_contradictory_pair": 0.9997
+      }
+    },
+    {
+      "check": "selfcheck_smoke",
+      "status": "PASS",
+      "seconds": 88.2,
+      "detail": {
+        "passages": 5,
+        "samples": 20,
+        "nli_scores_per_passage": [
+          9,
+          7,
+          9,
+          9,
+          11
+        ],
+        "nli_score_range": [
+          0.222,
+          0.9983
+        ],
+        "nli_seconds_per_pair": 0.0761,
+        "unigram_keys": {
+          "sent_level": [
+            "avg_neg_logprob",
+            "max_neg_logprob"
+          ],
+          "doc_level": [
+            "avg_neg_logprob",
+            "avg_max_neg_logprob"
+          ]
+        }
+      }
+    },
+    {
+      "check": "oracle_openalex_crossref",
+      "status": "PASS",
+      "seconds": 16.6,
+      "detail": [
+        {
+          "kind": "real",
+          "title": "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models",
+          "openalex_best": [
+            100.0,
+            "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models"
+          ],
+          "crossref_best": [
+            100.0,
+            "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models"
+          ]
+        },
+        {
+          "kind": "real",
+          "title": "Survey of Hallucination in Natural Language Generation",
+          "openalex_best": [
+            100.0,
+            "Survey of Hallucination in Natural Language Generation"
+          ],
+          "crossref_best": [
+            100.0,
+            "Survey of Hallucination in Natural Language Generation"
+          ]
+        },
+        {
+          "kind": "real",
+          "title": "FActScore: Fine-Grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+          "openalex_best": [
+            100.0,
+            "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation"
+          ],
+          "crossref_best": [
+            100.0,
+            "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation"
+          ]
+        },
+        {
+          "kind": "real",
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "openalex_best": [
+            100.0,
+            "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+          ],
+          "crossref_best": [
+            80.0,
+            "Multilingual Retrieval-Augmented Generation for Knowledge-Intensive Question Answering Task"
+          ]
+        },
+        {
+          "kind": "real",
+          "title": "On Faithfulness and Factuality in Abstractive Summarization",
+          "openalex_best": [
+            100.0,
+            "On Faithfulness and Factuality in Abstractive Summarization"
+          ],
+          "crossref_best": [
+            100.0,
+            "On Faithfulness and Factuality in Abstractive Summarization"
+          ]
+        },
+        {
+          "kind": "invented",
+          "title": "Lattice-Guided Citation Repair for Federated Bibliographic Graphs",
+          "openalex_best": [
+            45.50898203592815,
+            "Anomaly Detection using Knowledge Graphs: A Survey for Network Management and Cybersecurity Application"
+          ],
+          "crossref_best": [
+            55.91397849462365,
+            "Bibliographic citation index"
+          ]
+        },
+        {
+          "kind": "invented",
+          "title": "Thermodynamic Bounds on Reference Hallucination in Sparse Transformers",
+          "openalex_best": [
+            56.17977528089888,
+            "Semantic Thermodynamics of Transformer Architectures: A Framework for Understanding Hallucination Constraints"
+          ],
+          "crossref_best": [
+            53.623188405797094,
+            "Face hallucination based on position prior and sparse representation"
+          ]
+        },
+        {
+          "kind": "invented",
+          "title": "A Quantum Annealing Approach to Peer Review Assignment in Low-Resource Venues",
+          "openalex_best": [
+            53.89221556886228,
+            "Quantum computing for transport research: an introduction, systematic review, and perspective"
+          ],
+          "crossref_best": [
+            64.59627329192547,
+            "An approach to Quantum Annealing-based workforce assignment in manufacturing systems"
+          ]
+        },
+        {
+          "kind": "invented",
+          "title": "Recursive Provenance Folding for Multilingual Scholarly Knowledge Bases",
+          "openalex_best": [
+            47.14285714285714,
+            "Knowledge Prompting: How Knowledge Engineers Use Large Language Models"
+          ],
+          "crossref_best": [
+            59.06040268456376,
+            "Language, scholarly publishing, and the knowledge economy in multilingual Europe"
+          ]
+        },
+        {
+          "kind": "invented",
+          "title": "Adversarial Bibliometrics: Detecting Synthetic Authorship with Topological Signatures",
+          "openalex_best": [
+            40.65934065934066,
+            "Ground Penetrating Radar for Subsurface Utility Detection: Methods, Challenges, and Future Directions"
+          ],
+          "crossref_best": [
+            56.00000000000001,
+            "TAaCGH Suite for Detecting Cancer—Specific Copy Number Changes Using Topological Signatures"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "qwen_4bit_timing",
+      "status": "PASS",
+      "seconds": 313.7,
+      "detail": {
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "load_seconds": 235.4,
+        "greedy_new_tokens": 400,
+        "greedy_tokens_per_sec": 15.1,
+        "batch10_seconds": 50.1,
+        "batch10_new_tokens": 4000,
+        "peak_vram_gb": 8.09,
+        "greedy_text_head": "Certainly! Here are five references related to \"Information systems: Data cleaning\":\n\n1. **Chen, Y., & Yu, P. S. (2003). Data cleaning in information systems. In *Data Mining and Knowledge Discovery Handbook* (pp. 47-68). Springer.**\n   - This chapter provides an overview of data cleaning techniques and their importance in the context of information systems.\n\n2. **Khan, M. A., & Khan, S. M. (2019)"
+      }
+    }
+  ]
+}
