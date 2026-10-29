@@ -34,11 +34,31 @@ Status: **NOT STARTED** (only setup facts below). This is filled in only from re
 | Llama-2-13B (9b) | 0.657 | 0.500 | 0.686 | 0.546 | 0.696 | 0.723 |
 | Llama-2-7B (9a) | 0.517 | 0.500 | 0.574 | 0.501 | 0.573 | 0.575 |
 
-### Results
-_Filled in by `scripts/10_v2_reproduce_agrawal.py` → `results/v2_agrawal_auc.csv`._
+### Results (run 2026-10-30, local Mac; numpy 2.1.3, scikit-learn 1.6.1, the same versions as `requirements-lock.txt`)
+Command: `python scripts/10_v2_reproduce_agrawal.py` → `results/v2_agrawal_auc.csv`.
+
+**36/36 cells within ±0.005; max |diff| = 0.0005. V2 is VERIFIED.** No method was auto-flipped. All 100 resamples were used in every cell.
+
+| Model | IQ | DQ1 | DQ2 | DQ3 | DQ | IQ+DQ |
+|---|---|---|---|---|---|---|
+| GPT-4 | 0.8768 | 0.8854 | 0.8423 | 0.8590 | 0.9149 | 0.9274 |
+| gpt-3.5-turbo | 0.7818 | 0.5399 | 0.6098 | 0.5283 | 0.6239 | 0.7922 |
+| Llama-2-70B | 0.6577 | 0.5036 | 0.6308 | 0.5719 | 0.6583 | 0.7020 |
+| text-davinci-003 | 0.6947 | 0.5553 | 0.5880 | 0.5344 | 0.6211 | 0.7104 |
+| Llama-2-13B (as released) | 0.6568 | 0.5000 | 0.6858 | 0.5460 | 0.6961 | 0.7235 |
+| Llama-2-7B | 0.5172 | 0.5000 | 0.5742 | 0.5010 | 0.5729 | 0.5747 |
+
+(Bootstrap means. Point AUCs are in the CSV.)
+
+Findings from V2:
+1. **The text-vs-figure discrepancy is explained.** GPT-4 point AUCs are IQ 0.8781 and DQ1 0.8868. These round to the section 6.1 text values (0.878, 0.887), while the bootstrap means match the figure (0.877, 0.885). So the text reports point AUCs and the figures report bootstrap means. INFERRED, but it matches both cells exactly.
+2. **The 13B duplication (D-014) barely moves the published numbers.** Deduplicated (n = 800): IQ 0.6602 (+0.003), DQ2 0.6876, DQ3 0.5497, DQ 0.6964, IQ+DQ 0.7294 (+0.006). The defect does not change any conclusion of the paper.
+3. **The paper's small-model claim reproduces.** Llama-2-7B IQ = 0.517 and DQ1 = 0.500 (constant "yes"). This is the gap E1 tests.
 
 ## Deviations from the original setup
 | # | Deviation | Acceptable? Why |
 |---|---|---|
+| 1 | V2: `roc-utils` 0.2.2 is reimplemented (`src/aitr/metrics.py`) because it cannot be imported with current SciPy (`scipy.interp` removed) | Yes. Same RNG, sampling, skip rule, rounding and auto-flip, and 36/36 values match to ≤ 0.0005 |
+| 2 | V2: per-resample AUC from `sklearn.roc_auc_score` on 8-decimal-rounded scores instead of roc-utils' own trapezoid | Yes. Equivalent tie handling (`tests/test_metrics.py::test_near_ties_are_merged`); confirmed by the match |
 
 ## Additional checks required

@@ -1,0 +1,43 @@
+model,method,n,n_hallucinated,published,ours_bootstrap_mean,ours_point_auc,flipped,resamples_used,abs_diff,pass
+gpt-4,IQ,1000,468,0.877,0.8768,0.8781,False,100,0.0002,True
+gpt-4,DQ1,1000,468,0.885,0.8854,0.8868,False,100,0.0004,True
+gpt-4,DQ2,1000,468,0.842,0.8423,0.8445,False,100,0.0003,True
+gpt-4,DQ3,1000,468,0.859,0.859,0.8608,False,100,0.0,True
+gpt-4,DQ,1000,468,0.915,0.9149,0.9168,False,100,0.0001,True
+gpt-4,IQ+DQ,1000,468,0.927,0.9274,0.9286,False,100,0.0004,True
+gpt-3.5-turbo,IQ,1000,596,0.782,0.7818,0.7825,False,100,0.0002,True
+gpt-3.5-turbo,DQ1,1000,596,0.54,0.5399,0.5399,False,100,0.0001,True
+gpt-3.5-turbo,DQ2,1000,596,0.61,0.6098,0.6086,False,100,0.0002,True
+gpt-3.5-turbo,DQ3,1000,596,0.528,0.5283,0.529,False,100,0.0003,True
+gpt-3.5-turbo,DQ,1000,596,0.624,0.6239,0.6228,False,100,0.0001,True
+gpt-3.5-turbo,IQ+DQ,1000,596,0.792,0.7922,0.7917,False,100,0.0002,True
+llama-2-70b-chat,IQ,1000,662,0.658,0.6577,0.6594,False,100,0.0003,True
+llama-2-70b-chat,DQ1,1000,662,0.504,0.5036,0.5038,False,100,0.0004,True
+llama-2-70b-chat,DQ2,1000,662,0.631,0.6308,0.6289,False,100,0.0002,True
+llama-2-70b-chat,DQ3,1000,662,0.572,0.5719,0.5709,False,100,0.0001,True
+llama-2-70b-chat,DQ,1000,662,0.658,0.6583,0.6563,False,100,0.0003,True
+llama-2-70b-chat,IQ+DQ,1000,662,0.702,0.702,0.7032,False,100,0.0,True
+text-davinci-003,IQ,1000,736,0.695,0.6947,0.692,False,100,0.0003,True
+text-davinci-003,DQ1,1000,736,0.555,0.5553,0.5555,False,100,0.0003,True
+text-davinci-003,DQ2,1000,736,0.588,0.588,0.5888,False,100,0.0,True
+text-davinci-003,DQ3,1000,736,0.534,0.5344,0.5336,False,100,0.0004,True
+text-davinci-003,DQ,1000,736,0.621,0.6211,0.621,False,100,0.0001,True
+text-davinci-003,IQ+DQ,1000,736,0.71,0.7104,0.7085,False,100,0.0004,True
+llama-2-13b-chat,IQ,1000,767,0.657,0.6568,0.6595,False,100,0.0002,True
+llama-2-13b-chat,DQ1,1000,767,0.5,0.5,0.5,False,100,0.0,True
+llama-2-13b-chat,DQ2,1000,767,0.686,0.6858,0.6869,False,100,0.0002,True
+llama-2-13b-chat,DQ3,1000,767,0.546,0.546,0.5465,False,100,0.0,True
+llama-2-13b-chat,DQ,1000,767,0.696,0.6961,0.6971,False,100,0.0001,True
+llama-2-13b-chat,IQ+DQ,1000,767,0.723,0.7235,0.7254,False,100,0.0005,True
+llama-2-7b-chat,IQ,1000,683,0.517,0.5172,0.5175,False,100,0.0002,True
+llama-2-7b-chat,DQ1,1000,683,0.5,0.5,0.5,False,100,0.0,True
+llama-2-7b-chat,DQ2,1000,683,0.574,0.5742,0.5759,False,100,0.0002,True
+llama-2-7b-chat,DQ3,1000,683,0.501,0.501,0.5011,False,100,0.0,True
+llama-2-7b-chat,DQ,1000,683,0.573,0.5729,0.5745,False,100,0.0001,True
+llama-2-7b-chat,IQ+DQ,1000,683,0.575,0.5747,0.5762,False,100,0.0003,True
+llama-2-13b-chat [dedup],IQ,800,612,,0.6602,0.6632,False,100,,
+llama-2-13b-chat [dedup],DQ1,800,612,,0.5,0.5,False,100,,
+llama-2-13b-chat [dedup],DQ2,800,612,,0.6876,0.6892,False,100,,
+llama-2-13b-chat [dedup],DQ3,800,612,,0.5497,0.551,False,100,,
+llama-2-13b-chat [dedup],DQ,800,612,,0.6964,0.698,False,100,,
+llama-2-13b-chat [dedup],IQ+DQ,800,612,,0.7294,0.7316,False,100,,
