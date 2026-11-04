@@ -273,3 +273,13 @@ Reason: student decision ("i don't have that time can you skip this part"). Meas
 Evidence kept: the one finished pilot topic (`results/raw/e2_pilot/`) shows the pipeline works (5/5 titles parsed with Agrawal's regex). The scripts (`14_e2_generate.py`, `15_e2_score.py`) stay in the repository as an unexecuted extension and are labelled so in the README.
 Were any main-set results viewed before this change? E1 results had been viewed. E2 had produced no main-set output (only 1 pilot topic). E2 was not dropped because of E1's outcome. The stated reason is time, and the protocol listed V1 + V2 + E1 + R1 as a complete study before any result existed (protocol §1).
 Deeper-analysis requirement: still met by the E1 judge-swap ablation, the refusal-rule sensitivity check (J-NLI vs J-NLI-raw), R1 (oracle robustness) and the 13B duplicate sensitivity check.
+
+### PC-005 | RQ2 (topic familiarity) answered on Agrawal et al.'s released data
+Date: 2026-11-04
+Change: RQ2 moves from E2 (dropped, PC-004) to DS-1, at no generation cost. Registered **before** any familiarity count was fetched.
+- Familiarity per topic = log10(1 + OpenAlex works count) for the topic's leaf phrase (text after the colon), as protocol §4. 190 main topics.
+- H2: the fabrication rate (Bing label, y = 1) falls as familiarity rises. Per model: logistic slope on log10 familiarity with a 2,000-resample topic-cluster bootstrap (seed 7). **Supported for a model if the 95% CI of the slope is entirely below 0.** Six models means six tests, so this multiplicity is reported. A pooled model with model fixed effects is reported as a summary.
+- Tertiles are defined at **topic level** (same cut points for every model). Fabrication rate per tertile; judge AUROC (J-LM, J-STR, J-NLI) per tertile is **exploratory**.
+- 13B deduplicated (D-014).
+Reason: student request ("do RQ2"). Uses ~190 OpenAlex searches.
+Were any main-set results viewed before this change? E1 yes. Familiarity data: none fetched.
