@@ -119,10 +119,11 @@ Figure~\ref{fig:e1} and Table~\ref{tab:e1} give the results. As a consistency ch
 \begin{table}[t]
 \caption{E1: AUROC [95\% CI] per judge and paired differences from the LM judge. \textbf{Bold} differences have CIs that exclude 0. J-NLI-raw omits the refusal rule.}
 \label{tab:e1}
-\small
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lccccc}
 \toprule
-Model ($n$, \% halluc.) & J-LM & J-NLI & J-STR & J-NLI $-$ J-LM & J-STR $-$ J-LM \\
+Model ($n$, \%\,hall.) & J-LM & J-NLI & J-STR & J-NLI $-$ J-LM & J-STR $-$ J-LM \\
 \midrule
 GPT-4 (950, 48\%) & 0.881 [.855,.903] & 0.834 [.800,.864] & 0.876 [.849,.899] & \textbf{$-$0.047} [$-$.069,$-$.028] & $-$0.006 [$-$.016,.005] \\
 GPT-3.5 (950, 61\%) & 0.774 [.740,.806] & 0.717 [.676,.755] & 0.782 [.748,.815] & \textbf{$-$0.057} [$-$.085,$-$.029] & +0.008 [$-$.005,.021] \\
@@ -163,8 +164,8 @@ OpenAlex counts for the 190 leaf phrases range from 1{,}876 to 35.1 million work
 \begin{itemize}[leftmargin=*]
   \item \textbf{Ground truth.} Labels are Agrawal et al.'s 2023 Bing exact-phrase searches; R1 quantifies their agreement with scholarly databases but does not replace them.
   \item \textbf{Fixed answers.} E1 isolates the judge by design; it cannot say whether different prompts or more samples would produce a usable signal at 7B. The planned new-generator experiment (Qwen2.5-1.5B, with direct, log-probability, verbal-confidence and SelfCheck detectors) was dropped after a measured cost of 334\,s per topic on the available hardware; its code is released but was not run on the main set.
-  \item \textbf{Baseline scope.} SelfCheck-NLI was validated by implementation equivalence, not by re-measuring its published benchmark score.
-  \item \textbf{Familiarity proxy.} Leaf-phrase search counts are crude (``Topology'' counts works far outside computing) and RQ2 performs six tests without correction.
+  \item \textbf{Baseline scope.} The NLI baseline was validated by showing that our scorer is identical to the official implementation, not by re-measuring its published benchmark score.
+  \item \textbf{Familiarity proxy.} Leaf-phrase search counts are crude: generic leaves such as ``Design'' count works far outside computing. RQ2 also performs six tests without correction.
   \item \textbf{Scope.} Computer-science topics, English, and closed or 2023-era models; J-STR's parser was tuned on pilot answers from these models.
 \end{itemize}
 
