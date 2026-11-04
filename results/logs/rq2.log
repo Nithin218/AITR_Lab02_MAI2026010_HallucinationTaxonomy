@@ -1,0 +1,37 @@
+                count       mean        std     min       25%        50%        75%         max
+openalex_count  190.0  2496815.0  4471200.0  1876.0  366612.0  1079732.0  2712118.0  35112411.0 
+
+             min     median       max
+tertile                              
+low         1876   220050.0    532220
+mid       540546  1077663.0   2070888
+high     2072289  3460867.0  35112411 
+
+                       model  slope_per_log10   ci_lo  ci_hi  h2_supported
+                       gpt-4          -0.1145 -0.3878 0.1792         False
+               gpt-3.5-turbo          -0.1773 -0.5615 0.1685         False
+            text-davinci-003           0.0476 -0.2374 0.3343         False
+             llama-2-7b-chat          -0.0734 -0.3726 0.1994         False
+            llama-2-13b-chat          -0.3406 -0.7598 0.0182         False
+            llama-2-70b-chat          -0.2684 -0.5749 0.0026         False
+pooled (model fixed effects)          -0.1444 -0.3424 0.0402         False 
+
+           model tertile   n  fabrication_rate  auroc_j_lm  auroc_j_str  auroc_j_nli
+   gpt-3.5-turbo     low 315            0.6286      0.7612       0.7696       0.6999
+   gpt-3.5-turbo     mid 315            0.6635      0.7556       0.7723       0.7212
+   gpt-3.5-turbo    high 320            0.5281      0.7996       0.8010       0.7299
+           gpt-4     low 315            0.4952      0.8883       0.8647       0.7978
+           gpt-4     mid 315            0.4444      0.8674       0.8766       0.8422
+           gpt-4    high 320            0.4875      0.8905       0.8872       0.8616
+llama-2-13b-chat     low 280            0.8179      0.7255       0.6808       0.5603
+llama-2-13b-chat     mid 245            0.7673      0.6111       0.6667       0.5110
+llama-2-13b-chat    high 245            0.7265      0.6385       0.5794       0.5682
+llama-2-70b-chat     low 315            0.7270      0.6082       0.6798       0.4800
+llama-2-70b-chat     mid 315            0.6413      0.6873       0.7509       0.5667
+llama-2-70b-chat    high 320            0.6250      0.6709       0.6968       0.5123
+ llama-2-7b-chat     low 315            0.7143      0.5242       0.5551       0.6072
+ llama-2-7b-chat     mid 315            0.6762      0.5223       0.5012       0.5831
+ llama-2-7b-chat    high 320            0.6719      0.4961       0.5812       0.4870
+text-davinci-003     low 315            0.7270      0.6964       0.7296       0.5631
+text-davinci-003     mid 315            0.7460      0.7191       0.7197       0.6123
+text-davinci-003    high 320            0.7406      0.6675       0.7154       0.5678

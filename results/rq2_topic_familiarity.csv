@@ -1,0 +1,191 @@
+topic,leaf,openalex_count,fam,tertile
+Computer forensics: System forensics,System forensics,511148,5.708547515487782,low
+Architectures: Distributed architectures,Distributed architectures,2183452,6.339143847935703,high
+Continuous mathematics: Topology,Topology,2070888,6.316156821259743,mid
+Computational complexity and cryptography: Cryptographic protocols,Cryptographic protocols,211542,5.325398659014177,low
+Software organization and properties: Contextual software domains,Contextual software domains,486571,5.68714711364665,low
+Hardware validation: Physical verification,Physical verification,3462038,6.5393319559106615,high
+Operations research: Forecasting,Forecasting,3157151,6.4992954913544105,high
+Symbolic and algebraic manipulation: Symbolic and algebraic algorithms,Symbolic and algebraic algorithms,97991,4.991190621634603,low
+Power and energy: Power estimation and optimization,Power estimation and optimization,1305105,6.115645786268594,mid
+Physical sciences and engineering: Aerospace,Aerospace,830259,5.91921411512699,mid
+Computing / technology policy: Intellectual property,Intellectual property,1424412,6.153635928637783,mid
+Emerging technologies: Emerging interfaces,Emerging interfaces,2187005,6.339849974516063,high
+Network protocols: Cross-layer protocols,Cross-layer protocols,1087721,6.036517912555878,mid
+Design and analysis of algorithms: Parameterized complexity and exact algorithms,Parameterized complexity and exact algorithms,119142,5.076068531359959,low
+Network protocols: Network File System (NFS) protocol,Network File System (NFS) protocol,7562,3.878694100396108,low
+Intrusion/anomaly detection and malware mitigation: Malware and its mitigation,Malware and its mitigation,63913,4.805595998327254,low
+Computational complexity and cryptography: Communication complexity,Communication complexity,2950829,6.469944190120565,high
+Network algorithms: Data path algorithms,Data path algorithms,1976026,6.295792874396802,mid
+Artificial intelligence: Planning and scheduling,Planning and scheduling,2519698,6.401348663620147,high
+Security in hardware: Embedded systems security,Embedded systems security,1124817,6.051082257567397,mid
+Information retrieval: Users and interactive retrieval,Users and interactive retrieval,336522,5.527014751863798,low
+Computer graphics: Shape modeling,Shape modeling,8764385,6.942721496453526,high
+Very large scale integration design: VLSI system specification and constraints,VLSI system specification and constraints,16971,4.229733023094578,low
+Security in hardware: Hardware attacks and countermeasures,Hardware attacks and countermeasures,43127,4.63475931882058,low
+Enterprise computing: IT architectures,IT architectures,7674989,6.885077818292853,high
+Dependable and fault-tolerant systems and networks: Processors and memory architectures,Processors and memory architectures,1529017,6.184412598070699,mid
+"Visualization: Visualization theory, concepts and paradigms","Visualization theory, concepts and paradigms",313176,5.495789859580455,low
+Software notations and tools: Software libraries and repositories,Software libraries and repositories,365637,5.5630513247333235,low
+"Communication hardware, interfaces and storage: Displays and imagers",Displays and imagers,4499146,6.653130183040181,high
+Information systems applications: Digital libraries and archives,Digital libraries and archives,398958,5.600928266642465,low
+Operations research: Decision analysis,Decision analysis,11848109,7.073649077600529,high
+Integrated circuits: Reconfigurable logic and FPGAs,Reconfigurable logic and FPGAs,28622,4.456715150568593,low
+Logic: Type theory,Type theory,10499272,7.021159228306206,high
+Integrated circuits: Digital switches,Digital switches,1109037,6.0449464270396716,mid
+Cross-computing tools and techniques: Empirical studies,Empirical studies,8460316,6.927386635943459,high
+Data management systems: Database administration,Database administration,2090080,6.32016311729353,high
+Physical sciences and engineering: Astronomy,Astronomy,577673,5.761682821218696,mid
+Software creation and management: Collaboration in software development,Collaboration in software development,1454810,6.162806576147618,mid
+Ubiquitous and mobile computing: Ubiquitous and mobile computing design and evaluation methods,Ubiquitous and mobile computing design and evaluation methods,153761,5.186849019279432,low
+Enterprise computing: IT governance,IT governance,3434495,6.535863014909879,high
+Education: E-learning,E-learning,10145662,7.006280432624488,high
+Arts and humanities: Sound and music computing,Sound and music computing,134819,5.129754322802772,low
+Concurrent computing methodologies: Concurrent algorithms,Concurrent algorithms,710203,5.851383113999159,mid
+Artificial intelligence: Philosophical/theoretical foundations of artificial intelligence,Philosophical/theoretical foundations of artificial intelligence,65372,4.815398415416435,low
+Document types: Surveys and overviews,Surveys and overviews,3370005,6.527630674095247,high
+Parallel computing methodologies: Parallel algorithms,Parallel algorithms,2434364,6.386385695340853,high
+Formal languages and automata theory: Automata extensions,Automata extensions,85162,4.930250951738777,low
+Education: Computer-managed instruction,Computer-managed instruction,765965,5.884209492426208,mid
+Emerging technologies: Memory and dense storage,Memory and dense storage,179188,5.2533113458064085,low
+Network services: In-network processing,In-network processing,12057923,7.081272542219279,high
+Software and application security: Social network security and privacy,Social network security and privacy,499296,5.698358956627191,low
+Physical sciences and engineering: Mathematics and statistics,Mathematics and statistics,1952123,6.290507400833413,mid
+Network services: Naming and addressing,Naming and addressing,5158487,6.712522424595666,high
+Enterprise computing: Reference models,Reference models,12959532,7.1125893519067,high
+Dependable and fault-tolerant systems and networks: Secondary storage organization,Secondary storage organization,573775,5.758742378546523,mid
+Software notations and tools: General programming languages,General programming languages,3241742,6.5107785817321115,high
+Integrated circuits: Logic circuits,Logic circuits,532220,5.7260920066381225,low
+Design and analysis of algorithms: Parallel algorithms,Parallel algorithms,2434364,6.386385695340853,high
+Network security: Security protocols,Security protocols,1309900,6.117238473687507,mid
+Software and application security: Software security engineering,Software security engineering,905190,5.956740227264829,mid
+Operations research: Computer-aided manufacturing,Computer-aided manufacturing,474344,5.676094327107374,low
+World Wide Web: Web data description languages,Web data description languages,1006049,6.002619565396333,mid
+Very large scale integration design: On-chip resource management,On-chip resource management,189690,5.278046726022771,low
+Logic: Abstraction,Abstraction,1077663,6.032483375236727,mid
+Computing / technology policy: Computer crime,Computer crime,388707,5.589623478938707,low
+Data management systems: Query languages,Query languages,960351,5.9824304451624934,mid
+Software creation and management: Software post-development issues,Software post-development issues,1942818,6.288432342049716,mid
+Network properties: Network mobility,Network mobility,1566194,6.1948458331700245,mid
+Printed circuit boards: Electromagnetic interference and compatibility,Electromagnetic interference and compatibility,59836,4.776969811525757,low
+Computational complexity and cryptography: Quantum complexity theory,Quantum complexity theory,347852,5.541395753209918,low
+Formal languages and automata theory: Grammars and context-free languages,Grammars and context-free languages,313487,5.496220921136344,low
+Information systems applications: Enterprise information systems,Enterprise information systems,2072289,6.316450531279194,high
+Network performance evaluation: Network simulations,Network simulations,3677233,6.5655212669847876,high
+Logic: Separation logic,Separation logic,540546,5.732833461385036,mid
+Network components: Logical nodes,Logical nodes,427964,5.631408252825302,low
+Enterprise computing: Business-IT alignment,Business-IT alignment,786692,5.8958052858308845,mid
+Robustness: Safety critical systems,Safety critical systems,3700762,6.568291273398832,high
+Robustness: Fault tolerance,Fault tolerance,347234,5.540623493983641,low
+Education: Computer-assisted instruction,Computer-assisted instruction,840727,5.9246555116053345,mid
+Logic: Linear logic,Linear logic,1117417,6.048215662941195,mid
+Security in hardware: Hardware reverse engineering,Hardware reverse engineering,171522,5.234322364048425,low
+Operations research: Consumer products,Consumer products,3047784,6.483984327297828,high
+Semantics and reasoning: Program semantics,Program semantics,410501,5.613315277379571,low
+"Communication hardware, interfaces and storage: Wireless devices",Wireless devices,820622,5.914143684984174,mid
+"Randomness, geometry and discrete structures: Random projections and metric embeddings",Random projections and metric embeddings,212023,5.326385023559059,low
+Network components: End nodes,End nodes,2199467,6.342317647820262,high
+Computing / technology policy: Commerce policy,Commerce policy,1048257,6.020468185497354,mid
+Very large scale integration design: Design reuse and communication-based design,Design reuse and communication-based design,446181,5.649512045870822,low
+Theory and algorithms for application domains: Database theory,Database theory,2498235,6.397633462323332,high
+Computers in other domains: Personal computers and PC applications,Personal computers and PC applications,225757,5.3536431489934975,low
+Collaborative and social computing: Collaborative and social computing design and evaluation methods,Collaborative and social computing design and evaluation methods,542105,5.734084214055121,mid
+Network properties: Network reliability,Network reliability,2908890,6.463727447962278,high
+"Randomness, geometry and discrete structures: Pseudorandomness and derandomization",Pseudorandomness and derandomization,1876,3.273464272621346,low
+Software and application security: Web application security,Web application security,1153138,6.06188166054232,mid
+"Network components: Wireless access points, base stations and infrastructure","Wireless access points, base stations and infrastructure",65311,4.814992983035976,low
+Security services: Privacy-preserving protocols,Privacy-preserving protocols,279586,5.446516974085374,low
+Security services: Authorization,Authorization,583743,5.766222429710728,mid
+Education: Learning management systems,Learning management systems,4963174,6.695759588555055,high
+Security services: Digital rights management,Digital rights management,720122,5.857406682068751,mid
+Cross-computing tools and techniques: Verification,Verification,10762653,7.031919378712277,high
+Electronic design automation: Methodologies for EDA,Methodologies for EDA,93837,4.9723787429457085,low
+Computer graphics: Graphics systems and interfaces,Graphics systems and interfaces,363471,5.560470960686494,low
+Network protocols: Network protocol design,Network protocol design,2706920,6.432475581309954,high
+Models of computation: Interactive computation,Interactive computation,2265604,6.355184194462188,high
+Mathematical analysis: Calculus,Calculus,732345,5.864716313829247,mid
+Data management systems: Database management system engines,Database management system engines,433771,5.6372615148566965,low
+Electronic commerce: Online shopping,Online shopping,945034,5.975447893192212,mid
+"Law, social and behavioral sciences: Psychology",Psychology,4940849,6.693801669278784,high
+World Wide Web: Web searching and information discovery,Web searching and information discovery,220050,5.342523346511757,low
+Information retrieval: Retrieval models and ranking,Retrieval models and ranking,214132,5.330683601500495,low
+Probability and statistics: Probabilistic representations,Probabilistic representations,394833,5.596414543634377,low
+Very large scale integration design: Application-specific VLSI designs,Application-specific VLSI designs,30493,4.484214395962196,low
+"Enterprise computing: Enterprise ontologies, taxonomies and vocabularies","Enterprise ontologies, taxonomies and vocabularies",10253,4.010893313104381,low
+Document management and text processing: Document searching,Document searching,876928,5.942964432412283,mid
+"Communication hardware, interfaces and storage: Sound-based input / output",Sound-based input / output,710523,5.851578752061559,mid
+Electronic commerce: Secure online transactions,Secure online transactions,362041,5.558758955367914,low
+Collaborative and social computing: Collaborative and social computing devices,Collaborative and social computing devices,283492,5.452542339775996,low
+"Communication hardware, interfaces and storage: Electro-mechanical devices",Electro-mechanical devices,227877,5.357702399161089,low
+Logic: Modal and temporal logics,Modal and temporal logics,143300,5.156249221053078,low
+Network protocols: OAM protocols,OAM protocols,8289,3.9185545305502734,low
+Logic: Proof theory,Proof theory,2710659,6.433075047132674,high
+Operations research: Marketing,Marketing,3820290,6.582096445341238,high
+Database and storage security: Information accountability and usage control,Information accountability and usage control,297863,5.474018017326781,low
+Systems security: Firewalls,Firewalls,143294,5.156231036801436,low
+"Randomness, geometry and discrete structures: Random network models",Random network models,4902491,6.690416893648605,high
+Accessibility: Accessibility design and evaluation methods,Accessibility design and evaluation methods,2910281,6.463935073216188,high
+Network protocols: Application layer protocols,Application layer protocols,1563110,6.19398981933449,mid
+Computing / technology policy: Government technology policy,Government technology policy,3019519,6.479937910533464,high
+Electronic design automation: Timing analysis,Timing analysis,3014706,6.479245109356223,high
+Emerging technologies: Quantum technologies,Quantum technologies,1081802,6.034148181470659,mid
+Modeling and simulation: Model development and analysis,Model development and analysis,17976696,7.254709898384456,high
+Document management and text processing: Document capture,Document capture,3322344,6.521444728601997,high
+Network types: Ad hoc networks,Ad hoc networks,771426,5.887294835133866,mid
+Continuous mathematics: Continuous functions,Continuous functions,9233567,6.965369551869338,high
+Emerging technologies: Circuit substrates,Circuit substrates,591663,5.772075145283459,mid
+Real-time systems: Real-time languages,Real-time languages,4114064,6.614271149030635,high
+Formal languages and automata theory: Automata over infinite objects,Automata over infinite objects,25075,4.3992582611669215,low
+"Communication hardware, interfaces and storage: External storage",External storage,1612347,6.207458783231185,mid
+Artificial intelligence: Computer vision,Computer vision,2258116,6.353746440307277,high
+Network services: Network management,Network management,6957902,6.842478369962247,high
+Power and energy: Thermal issues,Thermal issues,1859494,6.269395014921219,mid
+Electronic design automation: Hardware description languages and compilation,Hardware description languages and compilation,41934,4.622576647353478,low
+Cross-computing tools and techniques: Measurement,Measurement,20982792,7.321863296238605,high
+Physical sciences and engineering: Electronics,Electronics,2323567,6.366155386775134,high
+Network protocols: Session protocols,Session protocols,891523,5.950133038960918,mid
+Arts and humanities: Media arts,Media arts,942777,5.974409439581943,mid
+Systems security: File system security,File system security,1396933,6.1451758877799545,mid
+Human computer interaction (HCI): Interactive systems and tools,Interactive systems and tools,4449122,6.648274412374898,high
+Formal methods and theory of security: Trust frameworks,Trust frameworks,2712605,6.43338671803285,high
+"Communication hardware, interfaces and storage: Scanners",Scanners,988853,5.99513217463559,mid
+Professional topics: Management of computing and information systems,Management of computing and information systems,3044890,6.483571750517067,high
+Information storage systems: Record storage systems,Record storage systems,2043980,6.3104768544599805,mid
+Information retrieval: Information retrieval query processing,Information retrieval query processing,353918,5.5489038781889715,low
+Enterprise computing: Enterprise modeling,Enterprise modeling,2446550,6.388554273350697,high
+"Law, social and behavioral sciences: Economics",Economics,5273142,6.722069548928433,high
+Probability and statistics: Statistical paradigms,Statistical paradigms,1788711,6.252540420567631,mid
+Machine learning: Learning settings,Learning settings,5126191,6.709794868523788,high
+Logic: Equational logic and rewriting,Equational logic and rewriting,69707,4.843282622523853,low
+"Communication hardware, interfaces and storage: Printers",Printers,523339,5.718783930068115,low
+Electronic commerce: Online banking,Online banking,500213,5.69915584260772,low
+Mathematical analysis: Integral equations,Integral equations,2052585,6.312301362401951,mid
+Cross-computing tools and techniques: Design,Design,35112411,7.545460663766422,high
+"Communication hardware, interfaces and storage: Wireless integrated network sensors",Wireless integrated network sensors,306044,5.485785288621524,low
+Machine learning: Machine learning approaches,Machine learning approaches,4128503,6.615792709708747,high
+Dependable and fault-tolerant systems and networks: Availability,Availability,32796319,7.515825115255721,high
+Software notations and tools: Software maintenance tools,Software maintenance tools,1179935,6.071858451712373,mid
+Dependable and fault-tolerant systems and networks: Redundancy,Redundancy,1056011,6.02366885333432,mid
+Information systems applications: Multimedia information systems,Multimedia information systems,864861,5.936946815650057,mid
+Hardware test: Board- and system-level test,Board- and system-level test,3289099,6.517077077735613,high
+"Communication hardware, interfaces and storage: Sensors and actuators",Sensors and actuators,609620,5.785059919005812,mid
+Human computer interaction (HCI): Interaction techniques,Interaction techniques,7837206,6.894161317709675,high
+Computer forensics: Surveillance mechanisms,Surveillance mechanisms,1144795,6.058728103298049,mid
+Discrete mathematics: Graph theory,Graph theory,2323533,6.366149031841506,high
+Physical sciences and engineering: Archaeology,Archaeology,907219,5.957712615836635,mid
+Cross-computing tools and techniques: Experimentation,Experimentation,1422521,6.153058991696085,mid
+Intrusion/anomaly detection and malware mitigation: Social engineering attacks,Social engineering attacks,369539,5.567661454473898,low
+Dependable and fault-tolerant systems and networks: Maintainability and maintenance,Maintainability and maintenance,3459696,6.5390380649805735,high
+Physical sciences and engineering: Earth and atmospheric sciences,Earth and atmospheric sciences,729293,5.862902640578478,mid
+Models of computation: Concurrency,Concurrency,3143525,6.497417056736415,high
+Systems security: Distributed systems security,Distributed systems security,1821573,6.260446818805421,mid
+Life and medical sciences: Metabolomics / metabonomics,Metabolomics / metabonomics,71019,4.851380667965596,low
+Software creation and management: Designing software,Designing software,1607855,6.206247150627738,mid
+Computers in other domains: Cartography,Cartography,352641,5.5473340359326,low
+Very large scale integration design: Economics of chip design and manufacturing,Economics of chip design and manufacturing,41129,4.614158709509175,low
+Professional topics: Computing industry,Computing industry,2027312,6.306920805268614,mid
+Software organization and properties: Software system structures,Software system structures,6640735,6.822216215365753,high
+Life and medical sciences: Bioinformatics,Bioinformatics,1659581,6.219998715779092,mid
+Embedded and cyber-physical systems: Embedded systems,Embedded systems,5494755,6.739948411917589,high
+Embedded and cyber-physical systems: Sensors and actuators,Sensors and actuators,609620,5.785059919005812,mid
+Very large scale integration design: Standard cell libraries,Standard cell libraries,1494899,6.174612141890719,mid
