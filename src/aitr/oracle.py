@@ -1,5 +1,6 @@
 """Scholarly-database oracle: OpenAlex first, then Crossref (protocol §4). Responses are cached on disk."""
 import json
+import os
 import time
 from pathlib import Path
 
@@ -18,6 +19,11 @@ def similarity(a: str, b: str) -> float:
 
 class Oracle:
     def __init__(self, cache_path: Path, mailto: str = "", per_page: int = 5):
+        """mailto defaults to $AITR_MAILTO; an OpenAlex key is read from $OPENALEX_API_KEY (never stored in git).
+
+        Without a key OpenAlex allows ~$0.10/day (~100 searches; headers seen 2026-11-04)."""
+        mailto = mailto or os.environ.get("AITR_MAILTO", "")
+        self.openalex_key = os.environ.get("OPENALEX_API_KEY", "")
         self.cache_path = Path(cache_path)
         self.cache = {}
         if self.cache_path.exists():
@@ -51,7 +57,7 @@ class Oracle:
         return self.cache[key]
 
     def openalex(self, title: str) -> list[str]:
-        params = {"search": title, "per_page": self.per_page} | ({"mailto": self.mailto} if self.mailto else {})
+        params = {"search": title, "per_page": self.per_page} | ({"mailto": self.mailto} if self.mailto else {}) | ({"api_key": self.openalex_key} if self.openalex_key else {})
         return self._cached("openalex", title, lambda q: [
             w.get("display_name") or "" for w in self._get("https://api.openalex.org/works", params, 0.15)["results"]])
 
@@ -60,6 +66,12 @@ class Oracle:
         pause = 0.15 if self.mailto else 0.3  # public pool is slower (Crossref docs)
         return self._cached("crossref", title, lambda q: [
             (w.get("title") or [""])[0] for w in self._get("https://api.crossref.org/works", params, pause)["message"]["items"]])
+
+    def openalex_count(self, query: str) -> int:
+        """Number of OpenAlex works matching a free-text search (topic familiarity, protocol §4)."""
+        params = {"search": query, "per_page": 1} | ({"mailto": self.mailto} if self.mailto else {}) | ({"api_key": self.openalex_key} if self.openalex_key else {})
+        return self._cached("openalex_count", query, lambda q: self._get(
+            "https://api.openalex.org/works", params, 0.15)["meta"]["count"])
 
     def label(self, title: str, tau: float, partial_band: float) -> dict:
         """found / partial / not_found. Crossref is queried only if OpenAlex has no match >= tau."""
