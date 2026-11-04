@@ -39,7 +39,9 @@ class Oracle:
         for attempt in range(8):
             try:
                 r = self.session.get(url, params=params, timeout=60)
-            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+                body = r.json() if r.status_code == 200 else None   # read inside try: resets can occur mid-body
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError,
+                    requests.exceptions.ChunkedEncodingError):
                 if attempt == 7:
                     raise
                 time.sleep(min(2 ** attempt * 2, 120))   # transient network failure (R1 run, 2026-11-04)
@@ -50,7 +52,7 @@ class Oracle:
                 continue
             r.raise_for_status()
             time.sleep(pause)
-            return r.json()
+            return body
         r.raise_for_status()
 
     def _cached(self, source, query, fetch):
