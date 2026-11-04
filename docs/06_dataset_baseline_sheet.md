@@ -1,5 +1,7 @@
 # Dataset and Baseline Validation Sheet (Prompt 06 output)
 
+> **Status note (2026-11-04):** Superseded in part. DS-3 (new generations) was not produced (PC-004). The Agrawal GPT-file column mapping is resolved (D-015). The Llama-2-13B duplicate defect is documented in D-014. DS-1 and DS-2 descriptions remain accurate. See `research_decisions.md` for every decision and protocol change. The text below is kept unchanged as the original planning record.
+
 Research question (from `05_research_brief.md`): for small open-weight LLMs generating references on ACM CCS topics, does a detector with an **external** judge (NLI) detect fabricated references better than LM-judged consistency checks? How does detection vary with topic familiarity?
 Domain: NLP / hallucination detection. There is **no training**: every detector is zero-shot, so there is no train/test split in the usual sense (see §4).
 

@@ -1,5 +1,7 @@
 # Feasibility, Novelty and Resource Access (Prompt 04 output)
 
+> **Status note (2026-11-04):** Superseded in part. The compute estimates here were too low (measured: D-013, PC-004). Oracle access needed an OpenAlex key and a contact email (D-019). R1 hit the API's daily limit (PC-006). The novelty matrix and the Agrawal et al. findings remain valid. See `research_decisions.md` for every decision and protocol change. The text below is kept unchanged as the original planning record.
+
 Candidate study (from D-006): reproduce SelfCheckGPT on WikiBio, then transfer it to fabricated-citation detection with an open-weight generator in Colab. Compare it with other cheap signals and stratify by topic familiarity.
 
 Search done 2026-10-29 by the AI assistant: 2 web searches plus 9 page fetches. This is **not** a systematic search. The student must run the search strings in §1 and add what they find.

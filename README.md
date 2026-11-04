@@ -62,4 +62,6 @@ Not executed here, marked [TEST REQUIRED]: `scripts/11_v1_reproduce_selfcheck.py
 - [ ] `results/e1_auroc.csv` matches Table 2 of the paper (re-running E1 from the cached `results/raw/e1_nli_*` needs no GPU)
 
 ## Credits and licences
+This repository's own code, documentation and paper source are released under the MIT License (`LICENSE`). Third-party material keeps its original licence: the Agrawal et al. data and prompts (MIT), SelfCheckGPT (MIT), the NLI checkpoint (Apache-2.0) and the WikiBio dataset (CC-BY-SA-3.0, not redistributed here). Cached OpenAlex/Crossref responses in `results/raw/` are bibliographic metadata under those services' terms.
+
 Data and prompts: Agrawal et al., microsoft/hallucinated-references (MIT). SelfCheckGPT (MIT) and its NLI checkpoint `potsawee/deberta-v3-large-mnli` (Apache-2.0). WikiBio hallucination dataset (CC-BY-SA-3.0). OpenAlex and Crossref APIs. AI assistance: Claude Code, logged in `ai_assistance_log.md`.

@@ -1,5 +1,7 @@
 # Research Brief (Gate G1; Prompt 05 output)
 
+> **Status note (2026-11-04):** Superseded in part. RQ1 was answered by E1 on Agrawal et al.'s released data, not by a new 7B generator (PC-003, PC-004). RQ2 moved to the released data (PC-005). RQ3 was dropped with E2. V1 = Unigram reproduction + NLI implementation equivalence (PC-002). Final results: `paper/main.pdf`. See `research_decisions.md` for every decision and protocol change. The text below is kept unchanged as the original planning record.
+
 Student: Nagireddy Nithin Kumar Reddy (MAI2026010) · Date: 2026-10-29 · Status: DRAFT, for instructor review before implementation
 
 ## Research problem

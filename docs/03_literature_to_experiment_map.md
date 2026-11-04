@@ -1,5 +1,7 @@
 # Literature-to-Experiment Map (Prompt 03 output)
 
+> **Status note (2026-11-04):** Superseded in part. The planned 7B generator on Colab became Qwen2.5-1.5B locally (PC-003), and that experiment (E2) was dropped (PC-004). The study ran as V1 + V2 + E1 + R1 + RQ2. The novelty framing was narrowed after Prompt 04 (D-007). See `research_decisions.md` for every decision and protocol change. The text below is kept unchanged as the original planning record.
+
 Constraints (from the student, 2026-10-29): Google Colab (free tier assumed), Claude Pro subscription, 15 days, solo or group not stated.
 Candidate gaps: G1, G2 and G4 from `02_gap_matrix.md`.
 
