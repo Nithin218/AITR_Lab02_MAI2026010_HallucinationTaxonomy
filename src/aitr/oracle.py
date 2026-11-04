@@ -37,7 +37,13 @@ class Oracle:
 
     def _get(self, url, params, pause):
         for attempt in range(8):
-            r = self.session.get(url, params=params, timeout=60)
+            try:
+                r = self.session.get(url, params=params, timeout=60)
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+                if attempt == 7:
+                    raise
+                time.sleep(min(2 ** attempt * 2, 120))   # transient network failure (R1 run, 2026-11-04)
+                continue
             if r.status_code == 429 or r.status_code >= 500:
                 wait = r.headers.get("Retry-After", "")
                 time.sleep(float(wait) if wait.isdigit() else min(2 ** attempt * 2, 120))
