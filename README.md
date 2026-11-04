@@ -3,6 +3,8 @@
 AITR Lab 02: implementation study following the T20 review *A Taxonomy of Hallucination Types in Large Language Models for Research Applications*.
 Nagireddy Nithin Kumar Reddy (MAI2026010), IIIT Allahabad.
 
+Repository: https://github.com/Nithin218/AITR_Lab02_MAI2026010_HallucinationTaxonomy (private). The protocol freeze is the tag `protocol-v1`.
+
 **Question.** Agrawal et al. (2023) found that LM-judged author-consistency checks detect hallucinated references for GPT-4 but not for 7B–13B Llama-2 models. Keeping the sampled author answers fixed, does an external NLI judge (as in SelfCheckGPT) or a model-free name-overlap judge recover detection? Is fabrication more frequent on less-published topics?
 
 **Main result.** No. On Llama-2-7B every judge stays near chance (AUROC 0.51–0.56). On larger models the NLI judge is significantly worse than the LM judge, and a model-free name-overlap judge matches or beats it. Paper: `paper/main.tex`.
