@@ -20,6 +20,14 @@ Status: **NOT STARTED** (only setup facts below). This is filled in only from re
 - Official class run on passages 0–2 (`--impl official --limit 3`): `results/raw/v1_selfcheck_scores_official.jsonl`
 - Batched scorer on the same passages: **max |diff| = 2.03e-7, mean 7.19e-8** over 25 sentence scores. **VERIFIED: equivalent.**
 - Speed on the Apple GPU: about 4 s per pair for whole passages, so the full V1-NLI is impractical locally (PC-001). Unigram runs on CPU.
+### V1 results (2026-11-04, local Mac; `python scripts/11_v1_reproduce_selfcheck.py --impl none`)
+| Method | NonFact AUC-PR | Factual AUC-PR | PCC | Target (README) | NonFact diff | Pass (±2.0) |
+|---|---|---|---|---|---|---|
+| SelfCheck-Unigram (max) | **85.64** | 58.50 | 64.72 | 85.63 / 58.47 / 64.71 | +0.01 | **VERIFIED** |
+| SelfCheck-Unigram (avg) | 81.54 | 41.97 | 37.81 | (not a target) | — | — |
+
+All 238 passages and 1,908 sentences. Every Unigram figure matches the README to ≤ 0.03. This also confirms the two INFERRED mappings: NonFact = minor + major, and PCC passage score with accurate 0 / minor 0.5 / major 1. File: `results/v1_selfcheck_unigram_only.csv`.
+
 - **Scope of V1 (PC-002, student decision):** Unigram is reproduced on the full benchmark. NLI is validated by equivalence to the official implementation only. The published NLI AUC-PR (92.50) is **not re-measured**, and the paper states this as a limitation.
 | SelfCheck-NLI NonFact AUC-PR | 92.50 (README) / _paper_ | | |
 | SelfCheck-Unigram (max) NonFact AUC-PR | 85.63 (README) / _paper_ | | |

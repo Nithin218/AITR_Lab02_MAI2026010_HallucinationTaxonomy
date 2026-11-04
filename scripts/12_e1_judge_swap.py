@@ -59,7 +59,8 @@ def nli_scores(df: pd.DataFrame, model: str, split: str, scorer) -> pd.Series:
             cached.to_csv(path, index=False)
             new = []
     cached["row"] = cached["row"].astype(int)
-    return part.merge(cached, on="row", how="left")[["j_nli", "j_nli_raw"]]
+    # merge onto the row ids only: `part` may already hold placeholder j_nli columns (bug fixed 2026-11-04)
+    return part[["row"]].merge(cached, on="row", how="left")[["j_nli", "j_nli_raw"]]
 
 
 def main():

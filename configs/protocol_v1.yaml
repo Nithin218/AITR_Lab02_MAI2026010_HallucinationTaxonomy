@@ -33,15 +33,17 @@ baseline:
   nli_batch_size: 32
 
 generator:
-  model: Qwen/Qwen2.5-7B-Instruct
-  revision: a09a35458c702b33eeacc393d103063234e8bc28   # env check Run 1, 2026-10-29
-  quantization: nf4-4bit
+  # PC-003 (2026-11-04): was Qwen/Qwen2.5-7B-Instruct 4-bit NF4 on a Colab T4 (rev a09a3545...)
+  model: Qwen/Qwen2.5-1.5B-Instruct   # Apache-2.0, 1.54B params, not gated (model card, 2026-11-04)
+  revision: TBD                       # recorded from the first load, then enforced
+  quantization: none                  # float16 on Apple MPS
   compute_dtype: float16
   k_titles: 5
   main_max_new_tokens: 400
   n_samples: 10
   temperature: 1.0
-  top_p: 1.0
+  top_p: 1.0                          # SelfCheck samples (D1, D2)
+  agrawal_top_p: 0.95                 # DQ / IQ samples: llama_run.py default
   dq_samples: 10
   iq_samples: 3
 

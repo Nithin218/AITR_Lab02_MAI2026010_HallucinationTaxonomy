@@ -192,6 +192,13 @@ Evidence (executed locally on the 10 pilot topics, 280 references across 6 model
 4. Observation for R1: Llama-2-7B titles are generic, and Bing's exact-phrase search "grounds" phrases that are not paper titles (8 of 20 Bing-grounded Llama pilot titles are only partial matches in OpenAlex/Crossref).
 5. OpenAlex returned HTTP 429 once without a key. The oracle now honours `Retry-After` and backs off for up to 8 attempts. Responses are cached (`results/raw/oracle_cache.jsonl`).
 
+### D-018 | Debug: E1 crashed after scoring GPT-4 (Prompt 11)
+Date: 2026-11-04
+Observed (actual traceback, `results/logs/e1_main.log`): `KeyError: "None of [Index(['j_nli', 'j_nli_raw'])] are in the [columns]"` in `nli_scores()`, after 950 GPT-4 references had been scored and checkpointed.
+Confirmed cause: `main()` creates placeholder `j_nli`/`j_nli_raw` columns before calling `nli_scores()`. Merging the cache onto that frame therefore produced `j_nli_x`/`j_nli_y`.
+Fix (smallest safe): merge onto `part[["row"]]` only. Regression test: `tests/test_judges.py::test_e1_cache_merge_with_placeholder_columns` (unsorted rows, placeholder columns, fully cached).
+Rerun needed? Resumed from the checkpoint. The cached GPT-4 NLI scores are valid, since the crash was after scoring. No AUROC had been computed, so no result was seen.
+
 ---
 
 ## Protocol changes
@@ -211,6 +218,14 @@ Change: V1 = (a) SelfCheck-Unigram reproduced on the full benchmark against the 
 Reason: Student instruction, 2026-11-04: "report V1 as Unigram reproduced plus the NLI scorer proven identical to the official code". V1-NLI needs about 40 h on the local GPU or a Colab session, which the student chose not to use.
 Were any main-set results viewed before this change? No (E1 still running).
 How it is reported: the paper's baseline section states that the NLI baseline is validated by implementation equivalence, not by reproducing the published number, and lists this as a limitation.
+
+### PC-003 | E2 generator: Qwen2.5-7B-Instruct (4-bit, Colab) → Qwen2.5-1.5B-Instruct (fp16, local Mac)
+Date: 2026-11-04
+Change: generator model and runtime for E2. DQ/IQ sampling uses `top_p = 0.95`, the `llama_run.py` default (protocol §4 had said only "as Agrawal"). DQ3 refers to the title by its position 1–5 in the main answer, as `direct_query()` does with `(i % 5) + 1`.
+Reason: student decision ("on this Mac it needs a smaller model such as Qwen2.5-1.5B"). 7B in fp16 needs ~15 GB; the Mac has 8 GB; bitsandbytes 4-bit is CUDA-only. Qwen2.5-1.5B-Instruct is Apache-2.0 and not gated (model card checked 2026-11-04).
+Consequences: E2 now tests an even smaller model than Agrawal's smallest (Llama-2-7B). This stays within the research question ("small models"), but RQ1's comparison with the 7B setting is now cross-model and cross-size. The brief's "7B generator" wording is superseded. E2 runs after E1, because they share one GPU.
+Were any main-set results viewed before this change? No: E2 had not been generated, and E1 was still running with no output viewed.
+Affected results / reruns: none.
 
 ---
 

@@ -141,7 +141,7 @@ def main():
     path = ROOT / f"results/v1_selfcheck{suffix}.csv"
     out.to_csv(path, index=False)
     print(out.to_string(index=False))
-    print(f"written {path.relative_to(ROOT)}" + ("" if not suffix else "  (PARTIAL: not a V1 result)"))
+    print(f"written {path.relative_to(ROOT)}" + ("  (PARTIAL: first passages only)" if len(recs) < len(ds) else ""))
 
 
 if __name__ == "__main__":

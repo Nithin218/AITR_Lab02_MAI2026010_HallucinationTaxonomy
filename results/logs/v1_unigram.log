@@ -1,0 +1,19 @@
+passages: 0 cached, 238 to score
+device: mps
+SelfCheck-1gram initialized
+  1/238 passages, 2s
+  21/238 passages, 40s
+  41/238 passages, 80s
+  61/238 passages, 118s
+  81/238 passages, 156s
+  101/238 passages, 195s
+  121/238 passages, 231s
+  141/238 passages, 267s
+  161/238 passages, 308s
+  181/238 passages, 346s
+  201/238 passages, 385s
+  221/238 passages, 420s
+                 method  n_passages  n_sentences  nonfact_aucpr  factual_aucpr   pcc  target_nonfact  target_factual  target_pcc  nonfact_diff  factual_diff pass_nonfact
+SelfCheck-Unigram (max)         238         1908          85.64          58.50 64.72           85.63           58.47       64.71          0.01          0.03         True
+SelfCheck-Unigram (avg)         238         1908          81.54          41.97 37.81             NaN             NaN         NaN           NaN           NaN          NaN
+written results/v1_selfcheck_unigram_only.csv  (PARTIAL: not a V1 result)

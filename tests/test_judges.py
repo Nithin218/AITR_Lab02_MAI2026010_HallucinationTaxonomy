@@ -66,6 +66,25 @@ def test_cluster_bootstrap_is_paired_and_unflipped():
     assert d["delta"] == 1.0 and d["lo"] == 1.0
 
 
+def test_e1_cache_merge_with_placeholder_columns(tmp=Path(__import__("tempfile").mkdtemp())):
+    """Regression (2026-11-04): E1 crashed when `part` already had j_nli columns before the merge."""
+    import importlib.util
+
+    import pandas as pd
+    spec = importlib.util.spec_from_file_location("e1", ROOT / "scripts/12_e1_judge_swap.py")
+    e1 = importlib.util.module_from_spec(spec)
+    sys.argv = ["x"]
+    spec.loader.exec_module(e1)
+    e1.ROOT = tmp
+    (tmp / "results/raw").mkdir(parents=True)
+    pd.DataFrame({"row": [0, 1], "j_nli": [0.1, 0.9], "j_nli_raw": [0.1, 0.8]}).to_csv(
+        tmp / "results/raw/e1_nli_m_main.csv", index=False)
+    df = pd.DataFrame({"model": ["m", "m"], "row": [1, 0], "iq_1": ["a", "a"], "iq_2": ["a", "a"],
+                       "iq_3": ["a", "a"], "j_nli": [None, None], "j_nli_raw": [None, None]})
+    out = e1.nli_scores(df, "m", "main", scorer=None)   # everything cached: scorer never called
+    assert out["j_nli"].tolist() == [0.9, 0.1] and out["j_nli_raw"].tolist() == [0.8, 0.1]
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):
