@@ -199,6 +199,12 @@ Confirmed cause: `main()` creates placeholder `j_nli`/`j_nli_raw` columns before
 Fix (smallest safe): merge onto `part[["row"]]` only. Regression test: `tests/test_judges.py::test_e1_cache_merge_with_placeholder_columns` (unsorted rows, placeholder columns, fully cached).
 Rerun needed? Resumed from the checkpoint. The cached GPT-4 NLI scores are valid, since the crash was after scoring. No AUROC had been computed, so no result was seen.
 
+### D-019 | Oracle access: OpenAlex key and Crossref polite pool
+Date: 2026-11-04
+Observed: OpenAlex without a key allows ~$0.10/day at $0.001 per search (headers `x-ratelimit-limit-usd: 0.1`), which was exhausted after ~170 R1 lookups. Crossref's public pool took ~18 s per query.
+Decision: the student supplied a free OpenAlex key (limit $1/day, verified by response headers) and the contact email mai2026010@iiita.ac.in for the polite pools (Crossref ~5 s per query, measured). Both are read from the environment (`OPENALEX_API_KEY`, `AITR_MAILTO` in `~/.zshrc`) and are **not** stored in the repository.
+Effect on results: none. A label depends only on the best match across both databases, and cached responses are reused. Only speed changes.
+
 ---
 
 ## Protocol changes
