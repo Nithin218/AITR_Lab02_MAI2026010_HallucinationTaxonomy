@@ -13,7 +13,8 @@ Nagireddy Nithin Kumar Reddy (MAI2026010), IIIT Allahabad.
 | V2 | Reproduce Agrawal et al.'s 36 AUCs from released scores | ✅ 36/36 within ±0.0005 | `results/v2_agrawal_auc.csv` |
 | V1 | SelfCheckGPT on WikiBio | ✅ Unigram reproduced (85.64 vs 85.63); NLI scorer shown identical to official code (not re-benchmarked, PC-002) | `results/v1_selfcheck_unigram_only.csv` |
 | E1 | Judge swap (J-LM / J-NLI / J-STR) on 6 models, 190 main topics | ✅ | `results/e1_auroc.csv`, `results/e1_deltas.csv` |
-| R1 | Bing labels vs OpenAlex/Crossref | ✅ | `results/r1_agreement.csv` |
+| R1 | Bing labels vs OpenAlex/Crossref (Llama-2-7B) | ✅ on 888/950 refs, κ = 0.72 (PC-006: API daily limit) | `results/r1_agreement.csv` |
+| Post-hoc | E1 on Bing–oracle agreement subset (peer review M2) | ✅ judges 0.54–0.61; NLI−LM not significant | `results/posthoc_label_agreement.csv` |
 | RQ2 | Fabrication vs topic familiarity | ✅ H2 not supported | `results/rq2_*.csv` |
 | E2 | New generator (Qwen2.5-1.5B), detectors D1–D6 | ❌ **not run** (PC-004: 334 s/topic). Code kept: `scripts/14_e2_generate.py`, `15_e2_score.py` | 1 pilot topic in `results/raw/e2_pilot/` |
 
@@ -43,7 +44,8 @@ for t in tests/test_*.py; do .venv/bin/python $t; done    # unit tests
 .venv/bin/python scripts/10_v2_reproduce_agrawal.py      # V2, CPU, ~1 min
 .venv/bin/python scripts/11_v1_reproduce_selfcheck.py --impl none   # V1 Unigram, CPU, ~8 min
 .venv/bin/python scripts/12_e1_judge_swap.py --split main --judges str,nli   # E1, ~1 h on Apple MPS / CUDA
-.venv/bin/python scripts/13_r1_oracle_relabel.py --split main --model llama-2-7b-chat   # R1, network
+.venv/bin/python scripts/13_r1_oracle_relabel.py --split main --model llama-2-7b-chat --cache-only   # R1 from cache (888 refs)
+.venv/bin/python scripts/17_posthoc_label_agreement.py   # post-hoc label-noise check
 .venv/bin/python scripts/16_rq2_familiarity.py           # RQ2, network (190 searches)
 .venv/bin/python scripts/20_make_figures.py              # paper figures
 ```

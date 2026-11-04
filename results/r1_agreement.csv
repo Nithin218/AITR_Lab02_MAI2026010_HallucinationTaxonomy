@@ -1,0 +1,2 @@
+model,tau,n,n_topics,n_not_labelled,n_partial,kappa_excl_partial
+llama-2-7b-chat,90.0,888,180,62,239,0.7198

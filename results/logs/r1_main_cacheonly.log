@@ -1,0 +1,9 @@
+cache-only: 62 references not labelled; reporting on 888
+
+tau=90.0, partial band=[75.0, 90.0)
+status        found  not_found  partial  All
+bing                                        
+grounded        125         63       89  277
+hallucinated      5        456      150  611
+All             130        519      239  888
+Cohen's kappa (Bing vs oracle, partial excluded, n=649): 0.720

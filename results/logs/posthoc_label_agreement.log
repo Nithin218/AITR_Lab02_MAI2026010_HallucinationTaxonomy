@@ -1,0 +1,3 @@
+               subset   n  n_hallucinated  j_lm_auroc        j_lm_ci  j_nli_auroc       j_nli_ci  j_str_auroc       j_str_ci       j_nli_minus_j_lm
+   all main refs (E1) 888             611      0.5173 [0.483, 0.551]       0.5563 [0.509, 0.602]       0.5476 [0.504, 0.590] +0.039 [-0.011, 0.089]
+Bing and oracle agree 581             456      0.5561 [0.511, 0.604]       0.6128 [0.551, 0.672]       0.5382 [0.471, 0.602] +0.057 [-0.012, 0.124]
