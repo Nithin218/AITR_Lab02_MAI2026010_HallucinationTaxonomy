@@ -41,7 +41,7 @@ class Oracle:
                 r = self.session.get(url, params=params, timeout=60)
                 body = r.json() if r.status_code == 200 else None   # read inside try: resets can occur mid-body
             except (requests.exceptions.Timeout, requests.exceptions.ConnectionError,
-                    requests.exceptions.ChunkedEncodingError):
+                    requests.exceptions.ChunkedEncodingError, requests.exceptions.JSONDecodeError):
                 if attempt == 7:
                     raise
                 time.sleep(min(2 ** attempt * 2, 120))   # transient network failure (R1 run, 2026-11-04)
