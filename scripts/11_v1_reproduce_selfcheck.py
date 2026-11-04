@@ -61,16 +61,18 @@ def score_passages(ds, limit, out_path, impl="batched", batch_size=8):
     if todo:
         device = torch.device(best_device())
         print(f"device: {device}")
-        nli = SelfCheckNLI(device=device) if impl == "official" else BatchedNLI(str(device), batch_size)
+        nli = (SelfCheckNLI(device=device) if impl == "official" else
+               None if impl == "none" else BatchedNLI(str(device), batch_size))
         uni = SelfCheckNgram(n=1)
         t0 = time.time()
         with open(out_path, "a", encoding="utf-8") as f:
             for k, i in enumerate(todo):
                 row = ds[i]
-                nli_s = nli.predict(sentences=row["gpt3_sentences"], sampled_passages=row["gpt3_text_samples"])
+                nli_s = [] if nli is None else nli.predict(sentences=row["gpt3_sentences"],
+                                                            sampled_passages=row["gpt3_text_samples"])
                 uni_s = uni.predict(sentences=row["gpt3_sentences"], passage=row["gpt3_text"],
                                     sampled_passages=row["gpt3_text_samples"])
-                rec = {"idx": i, "nli": [float(x) for x in nli_s],
+                rec = {"idx": i, "nli": [float(x) for x in nli_s] if nli is not None else None,
                        "uni_max": [float(x) for x in uni_s["sent_level"]["max_neg_logprob"]],
                        "uni_avg": [float(x) for x in uni_s["sent_level"]["avg_neg_logprob"]]}
                 f.write(json.dumps(rec) + "\n")
@@ -88,6 +90,8 @@ def evaluate(ds, recs):
     rows = []
     for method, key in (("SelfCheck-NLI", "nli"), ("SelfCheck-Unigram (max)", "uni_max"),
                         ("SelfCheck-Unigram (avg)", "uni_avg")):
+        if recs[0][key] is None:
+            continue
         s = np.array([x for r in recs for x in r[key]])
         assert len(s) == len(nonfact), "sentence/score misalignment"
         passage = [np.mean(r[key]) for r in recs]
@@ -107,7 +111,7 @@ def evaluate(ds, recs):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=10**9, help="score only the first N passages (smoke test)")
-    ap.add_argument("--impl", choices=["batched", "official"], default="batched",
+    ap.add_argument("--impl", choices=["batched", "official", "none"], default="batched",
                     help="NLI implementation: batched (default) or the official one-pair-at-a-time SelfCheckNLI")
     ap.add_argument("--batch-size", type=int, default=8)
     ap.add_argument("--check-equivalence", action="store_true",
@@ -129,10 +133,11 @@ def main():
         print(f"equivalence: {len(official)} passages, {len(diffs)} sentence scores, "
               f"max |batched - official| = {max(diffs):.2e}, mean = {np.mean(diffs):.2e}")
         return
-    path = official_path if args.impl == "official" else ROOT / "results/raw/v1_selfcheck_scores.jsonl"
+    path = {"official": official_path, "none": ROOT / "results/raw/v1_selfcheck_scores_unigram_only.jsonl"
+            }.get(args.impl, ROOT / "results/raw/v1_selfcheck_scores.jsonl")
     recs = score_passages(ds, args.limit, path, args.impl, args.batch_size)
     out = evaluate(ds, recs)
-    suffix = "" if len(recs) == len(ds) else f"_first{len(recs)}"
+    suffix = ("" if len(recs) == len(ds) else f"_first{len(recs)}") + ("_unigram_only" if args.impl == "none" else "")
     path = ROOT / f"results/v1_selfcheck{suffix}.csv"
     out.to_csv(path, index=False)
     print(out.to_string(index=False))

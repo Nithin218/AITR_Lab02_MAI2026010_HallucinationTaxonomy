@@ -196,7 +196,14 @@ Evidence (executed locally on the 10 pilot topics, 280 references across 6 model
 
 ## Protocol changes
 
-_None yet. Use the PC-XXX template in `docs/07_experiment_protocol.md` §12._
+### PC-001 | V1 split; V1-NLI deferred; E1 started before V1 completed
+Date: 2026-11-04
+Change: The freeze order was "V1 → E1". It is now: V1-Unigram (CPU) runs alongside E1; **V1-NLI (full benchmark) is deferred**.
+Reason: The student asked to run without Colab. On the local Apple GPU, NLI over whole WikiBio passages measured **~4 s per pair** (500 pairs in 34 min), so the full V1-NLI (38,160 pairs) would take ~40 h. E1 uses short author strings (0.063 s/pair measured) and is feasible.
+Why E1's validity does not depend on V1-NLI: E1 uses the same checkpoint, pair encoding and contradiction softmax as `SelfCheckNLI`. The batched scorer was shown **numerically identical** to the official class on 3 WikiBio passages (25 sentence scores, max |diff| 2.0e-7, mean 7.2e-8; `--check-equivalence`). The label order on MPS was re-checked (0.0002 / 0.9997). V1-NLI's remaining purpose is to confirm the published 92.50 with this package/model, a check of the upstream claim, not of our code.
+Were any main-set results viewed before this change? **No.** It was decided before E1 produced output.
+Affected results / reruns: none. If V1-NLI later misses its target, E1's NLI results are reported with that caveat.
+Git commit: (this commit)
 
 ---
 

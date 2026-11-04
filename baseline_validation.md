@@ -15,6 +15,11 @@ Status: **NOT STARTED** (only setup facts below). This is filled in only from re
 - **Pass criterion: NonFact AUC-PR within ±2.0 points** (research brief). Factual and PCC are reported, not gated.
 - Unigram target = the `max_neg_logprob` variant (INFERRED from the paper's "Unigram (max)"). The `avg` variant is reported too.
 - PCC passage score = mean of sentence labels with accurate = 0, minor = 0.5, major = 1 (INFERRED mapping). If only PCC misses, the mapping is the first suspect, not the scorer.
+
+### V1 implementation check: batched NLI vs. official `SelfCheckNLI` (2026-11-04, local Mac MPS)
+- Official class run on passages 0–2 (`--impl official --limit 3`): `results/raw/v1_selfcheck_scores_official.jsonl`
+- Batched scorer on the same passages: **max |diff| = 2.03e-7, mean 7.19e-8** over 25 sentence scores. **VERIFIED: equivalent.**
+- Speed on the Apple GPU: about 4 s per pair for whole passages, so the full V1-NLI is impractical locally (PC-001). Unigram runs on CPU.
 | SelfCheck-NLI NonFact AUC-PR | 92.50 (README) / _paper_ | | |
 | SelfCheck-Unigram (max) NonFact AUC-PR | 85.63 (README) / _paper_ | | |
 | Factual AUC-PR, PCC | README table | | |
