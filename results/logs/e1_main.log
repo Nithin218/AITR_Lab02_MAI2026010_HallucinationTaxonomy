@@ -1,0 +1,68 @@
+device: mps
+  gpt-4: 950 cached, 0 to score
+  gpt-3.5-turbo: 0 cached, 950 to score
+/Users/nagireddynithinkumarreddy/Desktop/ATR_submission/AITR_Lab02_MAI2026010_HallucinationTaxonomy/scripts/12_e1_judge_swap.py:58: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  cached = pd.concat([cached, pd.DataFrame(new)], ignore_index=True)
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+Be aware, overflowing tokens are not returned for the setting you have chosen, i.e. sequence pairs with the 'longest_first' truncation strategy. So the returned list will always be empty even if some tokens have been removed.
+  text-davinci-003: 0 cached, 950 to score
+/Users/nagireddynithinkumarreddy/Desktop/ATR_submission/AITR_Lab02_MAI2026010_HallucinationTaxonomy/scripts/12_e1_judge_swap.py:58: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  cached = pd.concat([cached, pd.DataFrame(new)], ignore_index=True)
+  llama-2-7b-chat: 0 cached, 950 to score
+/Users/nagireddynithinkumarreddy/Desktop/ATR_submission/AITR_Lab02_MAI2026010_HallucinationTaxonomy/scripts/12_e1_judge_swap.py:58: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  cached = pd.concat([cached, pd.DataFrame(new)], ignore_index=True)
+  llama-2-13b-chat: 0 cached, 770 to score
+/Users/nagireddynithinkumarreddy/Desktop/ATR_submission/AITR_Lab02_MAI2026010_HallucinationTaxonomy/scripts/12_e1_judge_swap.py:58: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  cached = pd.concat([cached, pd.DataFrame(new)], ignore_index=True)
+  llama-2-70b-chat: 0 cached, 950 to score
+/Users/nagireddynithinkumarreddy/Desktop/ATR_submission/AITR_Lab02_MAI2026010_HallucinationTaxonomy/scripts/12_e1_judge_swap.py:58: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  cached = pd.concat([cached, pd.DataFrame(new)], ignore_index=True)
+           model     judge   n  n_hallucinated  auroc  ci_lo  ci_hi
+           gpt-4      j_lm 950             452 0.8813 0.8549 0.9034
+           gpt-4     j_nli 950             452 0.8339 0.7995 0.8635
+           gpt-4     j_str 950             452 0.8757 0.8486 0.8989
+           gpt-4 j_nli_raw 950             452 0.7321 0.6934 0.7703
+   gpt-3.5-turbo      j_lm 950             576 0.7740 0.7404 0.8064
+   gpt-3.5-turbo     j_nli 950             576 0.7174 0.6755 0.7550
+   gpt-3.5-turbo     j_str 950             576 0.7821 0.7481 0.8154
+   gpt-3.5-turbo j_nli_raw 950             576 0.6961 0.6551 0.7362
+text-davinci-003      j_lm 950             701 0.6942 0.6523 0.7337
+text-davinci-003     j_nli 950             701 0.5799 0.5260 0.6301
+text-davinci-003     j_str 950             701 0.7216 0.6749 0.7640
+text-davinci-003 j_nli_raw 950             701 0.5801 0.5260 0.6305
+ llama-2-7b-chat      j_lm 950             653 0.5131 0.4806 0.5442
+ llama-2-7b-chat     j_nli 950             653 0.5587 0.5146 0.6032
+ llama-2-7b-chat     j_str 950             653 0.5456 0.5056 0.5880
+ llama-2-7b-chat j_nli_raw 950             653 0.5356 0.4877 0.5823
+llama-2-13b-chat      j_lm 770             595 0.6584 0.6040 0.7075
+llama-2-13b-chat     j_nli 770             595 0.5450 0.4869 0.5982
+llama-2-13b-chat     j_str 770             595 0.6396 0.5841 0.6908
+llama-2-13b-chat j_nli_raw 770             595 0.5553 0.4960 0.6112
+llama-2-70b-chat      j_lm 950             631 0.6597 0.6177 0.7020
+llama-2-70b-chat     j_nli 950             631 0.5237 0.4790 0.5691
+llama-2-70b-chat     j_str 950             631 0.7114 0.6706 0.7519
+llama-2-70b-chat j_nli_raw 950             631 0.5126 0.4679 0.5600 
+
+           model         contrast   delta   ci_lo   ci_hi  ci_excludes_0
+           gpt-4     j_nli - j_lm -0.0473 -0.0691 -0.0276           True
+           gpt-4     j_str - j_lm -0.0056 -0.0158  0.0047          False
+           gpt-4 j_nli_raw - j_lm -0.1491 -0.1820 -0.1171           True
+   gpt-3.5-turbo     j_nli - j_lm -0.0566 -0.0851 -0.0290           True
+   gpt-3.5-turbo     j_str - j_lm  0.0082 -0.0048  0.0207          False
+   gpt-3.5-turbo j_nli_raw - j_lm -0.0778 -0.1092 -0.0448           True
+text-davinci-003     j_nli - j_lm -0.1143 -0.1592 -0.0681           True
+text-davinci-003     j_str - j_lm  0.0274  0.0081  0.0479           True
+text-davinci-003 j_nli_raw - j_lm -0.1141 -0.1590 -0.0679           True
+ llama-2-7b-chat     j_nli - j_lm  0.0457 -0.0033  0.0939          False
+ llama-2-7b-chat     j_str - j_lm  0.0326 -0.0209  0.0877          False
+ llama-2-7b-chat j_nli_raw - j_lm  0.0226 -0.0251  0.0709          False
+llama-2-13b-chat     j_nli - j_lm -0.1134 -0.1869 -0.0395           True
+llama-2-13b-chat     j_str - j_lm -0.0189 -0.0689  0.0320          False
+llama-2-13b-chat j_nli_raw - j_lm -0.1032 -0.1761 -0.0314           True
+llama-2-70b-chat     j_nli - j_lm -0.1360 -0.1831 -0.0876           True
+llama-2-70b-chat     j_str - j_lm  0.0516  0.0271  0.0749           True
+llama-2-70b-chat j_nli_raw - j_lm -0.1471 -0.1936 -0.0996           True

@@ -1,0 +1,19 @@
+model,contrast,delta,ci_lo,ci_hi,ci_excludes_0
+gpt-4,j_nli - j_lm,-0.0473,-0.0691,-0.0276,True
+gpt-4,j_str - j_lm,-0.0056,-0.0158,0.0047,False
+gpt-4,j_nli_raw - j_lm,-0.1491,-0.182,-0.1171,True
+gpt-3.5-turbo,j_nli - j_lm,-0.0566,-0.0851,-0.029,True
+gpt-3.5-turbo,j_str - j_lm,0.0082,-0.0048,0.0207,False
+gpt-3.5-turbo,j_nli_raw - j_lm,-0.0778,-0.1092,-0.0448,True
+text-davinci-003,j_nli - j_lm,-0.1143,-0.1592,-0.0681,True
+text-davinci-003,j_str - j_lm,0.0274,0.0081,0.0479,True
+text-davinci-003,j_nli_raw - j_lm,-0.1141,-0.159,-0.0679,True
+llama-2-7b-chat,j_nli - j_lm,0.0457,-0.0033,0.0939,False
+llama-2-7b-chat,j_str - j_lm,0.0326,-0.0209,0.0877,False
+llama-2-7b-chat,j_nli_raw - j_lm,0.0226,-0.0251,0.0709,False
+llama-2-13b-chat,j_nli - j_lm,-0.1134,-0.1869,-0.0395,True
+llama-2-13b-chat,j_str - j_lm,-0.0189,-0.0689,0.032,False
+llama-2-13b-chat,j_nli_raw - j_lm,-0.1032,-0.1761,-0.0314,True
+llama-2-70b-chat,j_nli - j_lm,-0.136,-0.1831,-0.0876,True
+llama-2-70b-chat,j_str - j_lm,0.0516,0.0271,0.0749,True
+llama-2-70b-chat,j_nli_raw - j_lm,-0.1471,-0.1936,-0.0996,True
