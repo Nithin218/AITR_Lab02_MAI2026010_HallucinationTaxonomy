@@ -17,8 +17,12 @@ def similarity(a: str, b: str) -> float:
     return float(fuzz.ratio(norm_title(a), norm_title(b)))
 
 
+class CacheMiss(Exception):
+    """Raised in offline mode when a lookup is not in the cache."""
+
+
 class Oracle:
-    def __init__(self, cache_path: Path, mailto: str = "", per_page: int = 5):
+    def __init__(self, cache_path: Path, mailto: str = "", per_page: int = 5, offline: bool = False):
         """mailto defaults to $AITR_MAILTO; an OpenAlex key is read from $OPENALEX_API_KEY (never stored in git).
 
         Without a key OpenAlex allows ~$0.10/day (~100 searches; headers seen 2026-11-04)."""
@@ -30,7 +34,7 @@ class Oracle:
             for line in self.cache_path.read_text(encoding="utf-8").splitlines():
                 rec = json.loads(line)
                 self.cache[(rec["source"], rec["query"])] = rec["titles"]
-        self.mailto, self.per_page = mailto, per_page
+        self.mailto, self.per_page, self.offline = mailto, per_page, offline
         ua = "AITR-Lab02 research script" + (f" (mailto:{mailto})" if mailto else "")
         self.session = requests.Session()
         self.session.headers["User-Agent"] = ua
@@ -58,6 +62,8 @@ class Oracle:
     def _cached(self, source, query, fetch):
         key = (source, norm_title(query))
         if key not in self.cache:
+            if self.offline:
+                raise CacheMiss(key)
             titles = fetch(query)
             self.cache[key] = titles
             with open(self.cache_path, "a", encoding="utf-8") as f:

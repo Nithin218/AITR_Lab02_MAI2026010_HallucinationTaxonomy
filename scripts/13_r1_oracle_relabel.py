@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from aitr import agrawal, splits  # noqa: E402
-from aitr.oracle import Oracle  # noqa: E402
+from aitr.oracle import CacheMiss, Oracle  # noqa: E402
 
 CFG = yaml.safe_load((ROOT / "configs/protocol_v1.yaml").read_text())
 
@@ -29,6 +29,8 @@ def main():
     ap.add_argument("--model", default="llama-2-7b-chat")
     ap.add_argument("--tau", type=float, default=None)
     ap.add_argument("--mailto", default="")
+    ap.add_argument("--cache-only", action="store_true",
+                    help="label only titles whose lookups are cached; skip the rest (PC-006)")
     args = ap.parse_args()
     tau = args.tau if args.tau is not None else float(CFG["oracle"]["tau"])
     band = float(CFG["oracle"]["partial_band"])
@@ -38,14 +40,21 @@ def main():
         df = agrawal.drop_duplicate_refs(df)
     df = df[df["topic"].isin(set(splits.topics(args.split)))].reset_index(drop=True)
     (ROOT / "results/raw").mkdir(parents=True, exist_ok=True)
-    oracle = Oracle(ROOT / "results/raw/oracle_cache.jsonl", mailto=args.mailto)
+    oracle = Oracle(ROOT / "results/raw/oracle_cache.jsonl", mailto=args.mailto, offline=args.cache_only)
     labels = []
     for k, t in enumerate(df["gen_title"]):
-        labels.append(oracle.label(t, tau, band))
+        try:
+            labels.append(oracle.label(t, tau, band))
+        except CacheMiss:
+            labels.append({"status": "not_queried", "best_sim": None, "best_title": None, "source": None})
         if k % 50 == 0:
             print(f"  {k + 1}/{len(df)}", flush=True)
     out = pd.concat([df[["model", "row", "topic", "gen_title", "y"]], pd.DataFrame(labels)], axis=1)
     out["bing"] = out["y"].map({0: "grounded", 1: "hallucinated"})
+    n_skipped = int((out["status"] == "not_queried").sum())
+    if n_skipped:
+        print(f"cache-only: {n_skipped} references not labelled; reporting on {len(out) - n_skipped}")
+        out = out[out["status"] != "not_queried"].reset_index(drop=True)
     out.to_csv(ROOT / f"results/r1_labels_{args.model}_{args.split}.csv", index=False)
 
     print(f"\ntau={tau}, partial band=[{tau - band}, {tau})")
@@ -59,7 +68,8 @@ def main():
         with pd.option_context("display.max_colwidth", 70, "display.width", 250):
             print(show[["bing", "status", "best_sim", "gen_title", "best_title"]].to_string(index=False))
     else:
-        pd.DataFrame([{"model": args.model, "tau": tau, "n": len(out), "n_partial": int((out["status"] == "partial").sum()),
+        pd.DataFrame([{"model": args.model, "tau": tau, "n": len(out), "n_topics": out["topic"].nunique(),
+                       "n_not_labelled": n_skipped, "n_partial": int((out["status"] == "partial").sum()),
                        "kappa_excl_partial": round(kappa, 4)}]).to_csv(ROOT / "results/r1_agreement.csv", index=False)
 
 

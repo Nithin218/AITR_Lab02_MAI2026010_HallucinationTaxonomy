@@ -283,3 +283,10 @@ Change: RQ2 moves from E2 (dropped, PC-004) to DS-1, at no generation cost. Regi
 - 13B deduplicated (D-014).
 Reason: student request ("do RQ2"). Uses ~190 OpenAlex searches.
 Were any main-set results viewed before this change? E1 yes. Familiarity data: none fetched.
+
+### PC-006 | R1 reported on 888 of 950 main-set references (API daily limit)
+Date: 2026-11-04
+Change: R1 (and the post-hoc label-agreement check that depends on it) uses the 888 Llama-2-7B main-set references, in 177 of 190 topics, whose oracle lookups are complete in the cache. The other 62 references (the last 13 topics in file order) were not labelled.
+Reason: the OpenAlex daily allowance ($1 with the student's free key) was exhausted (HTTP 429, `retry-after: 28656` s). Student decision: "finish tonight on 888" rather than wait ~8 h for the reset.
+Were R1 results viewed before this change? **No.** The R1 confusion matrix and κ had not been computed on the main set. Only the pilot R1 had been seen.
+How it is reported: n = 888 / 177 topics is stated wherever R1 numbers appear. The missing topics are a contiguous tail in the released file's order, not chosen by any property of the data. Rerunning `scripts/13_r1_oracle_relabel.py` after the reset completes R1 from the cache.
