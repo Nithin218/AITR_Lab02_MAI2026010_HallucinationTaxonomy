@@ -182,6 +182,16 @@ Decision: The student approved both proposals ("do it", 2026-10-30).
 Important methodological note: Agrawal's AUC procedure **auto-flips** detectors that fall below 0.5. That is replicated in V2 only. **Our E1/E2 analyses must not auto-flip.** The score orientation is fixed in protocol §3, so a detector worse than chance is reported as < 0.5.
 Source / evidence: arXiv PDF v3 pp. 7 and 12 (text extracted, VERIFIED); `roc-utils` 0.2.2 `_roc.py` and `_sampling.py` (read, VERIFIED).
 
+### D-017 | Pilot-tuned settings: name parsing, refusal rule, oracle similarity and τ
+Date: 2026-11-04
+Stage: protocol (pilot topics only; **no main-set result seen**)
+Evidence (executed locally on the 10 pilot topics, 280 references across 6 models):
+1. **Name parsing** (J-STR, and the refusal check for J-NLI). The first version lost names that share a line with a preamble ("…: Trevor Hastie"), failed on mid-line bullets ("* A * B") and numbered lists, and mis-split "Last, First" lists. Fixed: strip boilerplate before a colon; split on bullets and list numbers; compare **all name tokens** rather than surnames; filter function words so refusals do not produce tokens. Result: 26 of 840 pilot answers parse to no names, and inspection shows these are genuine refusals. The 60 most frequent tokens are all real names. Every case is in `tests/test_judges.py`.
+2. **Refusal rule for J-NLI (primary).** Two refusals ("I could not find…") entail each other, so raw NLI would call them consistent. Agrawal's LM judge was told "if either of them is not a list of authors, output 0". The primary J-NLI applies the same rule (answers with no name tokens count as empty). **J-NLI-raw** is reported as a sensitivity check.
+3. **Oracle similarity.** `token_sort_ratio` matched a reordered fake title ("Coding Theory and Network Information Theory" ↔ "Information theory and network coding", 91.4). The order-sensitive `fuzz.ratio` gives κ vs. Bing (partial excluded) of GPT-4 0.811 → **0.823** and Llama-2-7B 0.669 → **0.802**, with 0 Bing-hallucinated titles labelled found. **τ = 90 kept.**
+4. Observation for R1: Llama-2-7B titles are generic, and Bing's exact-phrase search "grounds" phrases that are not paper titles (8 of 20 Bing-grounded Llama pilot titles are only partial matches in OpenAlex/Crossref).
+5. OpenAlex returned HTTP 429 once without a key. The oracle now honours `Retry-After` and backs off for up to 8 attempts. Responses are cached (`results/raw/oracle_cache.jsonl`).
+
 ---
 
 ## Protocol changes

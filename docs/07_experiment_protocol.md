@@ -67,8 +67,8 @@ flowchart TD
 | D4 Verbalised | 1 − (stated probability / 100) | Inverted |
 | D5 DQ ensemble | 1 − mean(DQ1, DQ2, DQ3 "yes" fraction) | Inverted |
 | D6 IQ (LM judge) | 1 − LM-judged author overlap (Agrawal prompt) | Inverted |
-| J-NLI | Mean over 6 ordered pairs (i≠j) of P(contradiction \| premise = authors_i, hypothesis = authors_j) | As is |
-| J-STR | 1 − mean pairwise Jaccard over normalised surname sets | As is |
+| J-NLI | Mean over 6 ordered pairs (i≠j) of P(contradiction \| premise = authors_i, hypothesis = authors_j); pairs involving an answer with no parseable name score 1, the same rule Agrawal's LM judge was given (D-017). J-NLI-raw (sensitivity) applies the rule only to literally empty answers | As is |
+| J-STR | 1 − mean pairwise Jaccard over normalised **name-token** sets (D-017) | As is |
 
 In E1, D6 = J-LM, taken from the released scores. Empty author samples are scored as maximally inconsistent (s = 1) and counted in the report.
 
@@ -84,7 +84,7 @@ In E1, D6 = J-LM, taken from the released scores. Empty author samples are score
 | IQ | 3 author samples in independent sessions; LM judge = Qwen with Agrawal's prompt |
 | D4 | Greedy, single prompt, parse an integer 0–100; unparseable → missing (counted) |
 | NLI | `potsawee/deberta-v3-large-mnli`, max length 512, batch 32 |
-| Oracle | OpenAlex `works?search=<title>` top 5; else Crossref `query.bibliographic` top 5; similarity = `rapidfuzz.fuzz.token_sort_ratio` on lowercased, punctuation-stripped titles; τ set on pilot (default 90 unless the pilot shows clear failure) |
+| Oracle | OpenAlex `works?search=<title>` top 5; else Crossref `query.bibliographic` top 5; similarity = `rapidfuzz.fuzz.ratio` (order-sensitive) on lowercased, punctuation-stripped titles; τ = 90 (both set on the pilot, D-017) |
 | Familiarity | OpenAlex result count for the topic's leaf phrase (after the colon), log10 |
 
 ## 5. Seeds and determinism

@@ -48,8 +48,8 @@ generator:
 oracle:
   openalex_per_page: 5
   crossref_rows: 5
-  similarity: rapidfuzz.fuzz.token_sort_ratio
-  tau: TBD-PILOT                    # default 90 unless pilot shows clear failure
+  similarity: rapidfuzz.fuzz.ratio      # D-017: order-sensitive, chosen on pilot
+  tau: 90                           # D-017: default kept after pilot check
   partial_band: 15
   mailto: TBD-STUDENT-EMAIL         # Crossref polite pool
 

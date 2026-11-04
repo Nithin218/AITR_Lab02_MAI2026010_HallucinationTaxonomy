@@ -8,6 +8,13 @@ Status: **NOT STARTED** (only setup facts below). This is filled in only from re
 | Dataset size | 238 passages (card) | 238 passages, 1,908 sentences (env Run 1) | VERIFIED |
 | NonFact definition (minor+major inaccurate?) | README random NonFact = 72.96, Factual = 27.04 | (761+631)/1908 = 72.96%; 516/1908 = 27.04% | VERIFIED by arithmetic: NonFact = minor + major. Confirm the wording in the paper. |
 | NLI label index 1 = contradiction | source code assumption | 0.0002 vs 0.9997 on hand-made pairs | VERIFIED |
+
+### V1 pre-registration (committed 2026-11-04, before the first run)
+- Script: `scripts/11_v1_reproduce_selfcheck.py`. The official `SelfCheckNLI` / `SelfCheckNgram(n=1)` classes are used unchanged, with all 20 samples per passage on all 238 passages.
+- Targets (selfcheckgpt README): NLI NonFact 92.50 / Factual 66.08 / PCC 74.14; Unigram 85.63 / 58.47 / 64.71.
+- **Pass criterion: NonFact AUC-PR within ±2.0 points** (research brief). Factual and PCC are reported, not gated.
+- Unigram target = the `max_neg_logprob` variant (INFERRED from the paper's "Unigram (max)"). The `avg` variant is reported too.
+- PCC passage score = mean of sentence labels with accurate = 0, minor = 0.5, major = 1 (INFERRED mapping). If only PCC misses, the mapping is the first suspect, not the scorer.
 | SelfCheck-NLI NonFact AUC-PR | 92.50 (README) / _paper_ | | |
 | SelfCheck-Unigram (max) NonFact AUC-PR | 85.63 (README) / _paper_ | | |
 | Factual AUC-PR, PCC | README table | | |

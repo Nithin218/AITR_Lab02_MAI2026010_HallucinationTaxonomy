@@ -19,6 +19,38 @@ def point_auc(scores, y) -> float:
     return float(roc_auc_score(np.asarray(y), np.round(np.asarray(scores, dtype=float), 8)))
 
 
+def cluster_bootstrap_auc(scores: dict, y, clusters, n_boot: int = 2000, seed: int = 7) -> dict:
+    """Point AUROC and 95% percentile CI per detector, resampling clusters (topics) with replacement.
+
+    No auto-flip: orientation is fixed in advance (protocol §3). The same resamples are used for every
+    detector, so differences between detectors are paired; `deltas` holds the per-resample AUCs for that.
+    """
+    y = np.asarray(y)
+    clusters = np.asarray(clusters)
+    s = {k: np.round(np.asarray(v, dtype=float), 8) for k, v in scores.items()}
+    groups = [np.flatnonzero(clusters == c) for c in np.unique(clusters)]
+    rng = np.random.default_rng(seed)
+    boots = {k: [] for k in s}
+    for _ in range(n_boot):
+        idx = np.concatenate([groups[g] for g in rng.integers(0, len(groups), len(groups))])
+        if len(np.unique(y[idx])) < 2:
+            continue
+        for k, v in s.items():
+            boots[k].append(roc_auc_score(y[idx], v[idx]))
+    out = {}
+    for k, v in s.items():
+        b = np.array(boots[k])
+        out[k] = {"auc": float(roc_auc_score(y, v)), "lo": float(np.percentile(b, 2.5)),
+                  "hi": float(np.percentile(b, 97.5)), "boot": b}
+    return out
+
+
+def paired_delta(result: dict, a: str, b: str) -> dict:
+    d = result[a]["boot"] - result[b]["boot"]
+    return {"delta": result[a]["auc"] - result[b]["auc"], "lo": float(np.percentile(d, 2.5)),
+            "hi": float(np.percentile(d, 97.5))}
+
+
 def agrawal_bootstrap_auc(scores, y, n_bootstrap: int = 100, seed: int = 42, auto_flip: bool = True) -> dict:
     s = np.round(np.asarray(scores, dtype=float), 8)
     y = np.asarray(y)

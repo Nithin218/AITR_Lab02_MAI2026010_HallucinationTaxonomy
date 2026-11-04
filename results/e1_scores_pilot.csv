@@ -1,0 +1,281 @@
+model,row,topic,gen_title,y,j_lm,j_str
+gpt-4,130,Machine learning: Learning paradigms,Pattern Recognition and Machine Learning,0,0.0,0.0
+gpt-4,131,Machine learning: Learning paradigms,Neural Networks and Deep Learning,0,0.33333333333333337,0.0
+gpt-4,132,Machine learning: Learning paradigms,Reinforcement Learning: An Introduction,0,0.0,0.0
+gpt-4,133,Machine learning: Learning paradigms,Machine Learning: A Probabilistic Perspective,0,0.0,0.0
+gpt-4,134,Machine learning: Learning paradigms,Foundations of Machine Learning,0,0.0,0.0
+gpt-4,150,Logic: Logic and verification,"The Art of Computer Programming, Volume 1: Fundamental Algorithms",0,0.0,0.0
+gpt-4,151,Logic: Logic and verification,Handbook of Automated Reasoning,0,0.0,0.0
+gpt-4,152,Logic: Logic and verification,Logic in Computer Science: Modelling and Reasoning about Systems,0,0.0,0.0
+gpt-4,153,Logic: Logic and verification,Introduction to the Theory of Computation,0,0.0,0.0
+gpt-4,154,Logic: Logic and verification,Formal Methods: State of the Art and New Directions,0,0.0,0.0
+gpt-4,285,Mathematical analysis: Numerical analysis,Numerical Methods for Engineers and Scientists,0,0.0,0.0
+gpt-4,286,Mathematical analysis: Numerical analysis,Applied Numerical Analysis,0,0.6666666666666667,0.33333333333333337
+gpt-4,287,Mathematical analysis: Numerical analysis,A First Course in Numerical Analysis,0,0.0,0.0
+gpt-4,288,Mathematical analysis: Numerical analysis,Introduction to Numerical Analysis,0,0.7777666666666666,0.8333333333333334
+gpt-4,289,Mathematical analysis: Numerical analysis,Numerical Analysis: Mathematics of Scientific Computing,0,0.0,0.0
+gpt-4,405,Electronic design automation: Logic synthesis,High-Level Synthesis for Real-time Digital Signal Processing,0,1.0,0.9555555555555556
+gpt-4,406,Electronic design automation: Logic synthesis,Logic Synthesis and Verification Algorithms,0,0.0,0.0
+gpt-4,407,Electronic design automation: Logic synthesis,Logic Synthesis Using Synopsys,0,1.0,1.0
+gpt-4,408,Electronic design automation: Logic synthesis,Automatic Synthesis of Digital Electronic Circuits,1,1.0,1.0
+gpt-4,409,Electronic design automation: Logic synthesis,Application-Specific Integrated Circuits: Synthesis and Optimization,1,0.0,0.0
+gpt-4,640,Embedded and cyber-physical systems: Sensor networks,"Design and Deployment of Industrial Sensor Networks: Applications, Taxonomies, and Research Trends",1,1.0,1.0
+gpt-4,641,Embedded and cyber-physical systems: Sensor networks,"Foundations and Principles of Distributed Manufacturing: Elements of Manufacturing Networks, Cyber-Physical Production Systems, and Smart Automation",0,1.0,0.9855072463768116
+gpt-4,642,Embedded and cyber-physical systems: Sensor networks,Wireless Sensor Networks for Industrial Process Monitoring and Control: A Survey,0,0.6666666666666667,0.7634920634920636
+gpt-4,643,Embedded and cyber-physical systems: Sensor networks,Taming Cyber-Physical Systems: from Theory to Practice,1,1.0,1.0
+gpt-4,644,Embedded and cyber-physical systems: Sensor networks,Energy-Efficient Cyber-Physical Systems: Challenges and Opportunities in Sensor Networks and IoT,1,1.0,1.0
+gpt-4,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Probabilistic Methods for Algorithmic Discrete Mathematics,0,0.6666666666666667,0.6666666666666667
+gpt-4,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Graph Dynamics,0,0.0,0.0
+gpt-4,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures","Combinatorial Enumeration of Groups, Graphs, and Chemical Compounds",0,0.0,0.0
+gpt-4,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Geometric Spanner Networks,0,0.6666666666666667,0.6666666666666667
+gpt-4,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Counting and Sampling Spatial Graphs,1,1.0,1.0
+gpt-4,710,Information systems applications: Mobile information processing systems,Mobile Information Systems: Infrastructure and Design for Adaptivity and Flexibility,0,1.0,1.0
+gpt-4,711,Information systems applications: Mobile information processing systems,"Mobile Computing and Wireless Communications: Applications, Networks, Platforms, Architectures, and Security",0,0.33333333333333337,0.33333333333333337
+gpt-4,712,Information systems applications: Mobile information processing systems,Location-Based Services: Fundamentals and Operation,0,0.89,0.8888888888888888
+gpt-4,713,Information systems applications: Mobile information processing systems,"Ubiquitous and Pervasive Computing: Concepts, Methodologies, Tools, and Applications",0,1.0,0.8
+gpt-4,714,Information systems applications: Mobile information processing systems,Mobile and Wireless Systems Beyond 3G: Managing New Business Opportunities,0,1.0,0.9791666666666666
+gpt-4,765,Education: Distance learning,Theories and Models of Online Learning: An Overview,1,1.0,1.0
+gpt-4,766,Education: Distance learning,Assessing the Impact of Distance Learning on Student Performance,1,1.0,1.0
+gpt-4,767,Education: Distance learning,The Integration of Technology in K-12 Education: The Promise and Challenges of Distance Learning,1,1.0,1.0
+gpt-4,768,Education: Distance learning,The Evolution of Distance Education: Historical and Theoretical Perspectives,1,0.8333333333333333,0.8888888888888888
+gpt-4,769,Education: Distance learning,Enhancing Teacher Effectiveness in Distance Learning through Digital Pedagogy,1,1.0,1.0
+gpt-4,795,Information theory: Coding theory,Elements of Information Theory,0,0.0,0.0
+gpt-4,796,Information theory: Coding theory,A Mathematical Theory of Communication,0,0.33333333333333337,0.33333333333333337
+gpt-4,797,Information theory: Coding theory,Information Theory and Network Coding,0,0.0,0.0
+gpt-4,798,Information theory: Coding theory,Coding theorems for a discrete source with a fidelity criterion,0,0.9166666666666667,0.877104377104377
+gpt-4,799,Information theory: Coding theory,Error Control Coding: Fundamentals and Applications,0,0.0,0.1333333333333333
+gpt-4,825,Design and analysis of algorithms: Concurrent algorithms,Concurrent Algorithms for Real-Time Data Processing,1,1.0,1.0
+gpt-4,826,Design and analysis of algorithms: Concurrent algorithms,Design and Analysis of Efficient Concurrent Data Structures,1,1.0,1.0
+gpt-4,827,Design and analysis of algorithms: Concurrent algorithms,Scalable Techniques for Concurrent Algorithm Design,1,1.0,1.0
+gpt-4,828,Design and analysis of algorithms: Concurrent algorithms,Advanced Topics in Concurrent Algorithms and Data Structures,1,0.0,0.0
+gpt-4,829,Design and analysis of algorithms: Concurrent algorithms,Concurrent and Distributed Algorithms for Graph Optimization Problems,1,1.0,1.0
+gpt-3.5-turbo,130,Machine learning: Learning paradigms,Reinforcement learning: An introduction,0,0.0,0.0
+gpt-3.5-turbo,131,Machine learning: Learning paradigms,Deep Learning,0,0.0,0.0
+gpt-3.5-turbo,132,Machine learning: Learning paradigms,Pattern Recognition and Machine Learning,0,0.0,0.0
+gpt-3.5-turbo,133,Machine learning: Learning paradigms,Support Vector Machines for Pattern Classification,0,0.6666666666666667,0.6666666666666667
+gpt-3.5-turbo,134,Machine learning: Learning paradigms,Introduction to Machine Learning,0,0.0,0.33333333333333337
+gpt-3.5-turbo,150,Logic: Logic and verification,Introduction to Mathematical Logic and Type Theory: To Truth Through Proof,0,0.33333333333333337,0.0
+gpt-3.5-turbo,151,Logic: Logic and verification,Logical Foundations for Computer Science,0,1.0,1.0
+gpt-3.5-turbo,152,Logic: Logic and verification,Handbook of Proof Theory,0,0.44443333333333335,0.8657407407407407
+gpt-3.5-turbo,153,Logic: Logic and verification,The Art of Computer Programming: Fundamental Algorithms,0,0.0,0.0
+gpt-3.5-turbo,154,Logic: Logic and verification,Elementary Mathematical and Computational Tools for Electrical and Computer Engineers Using MATLAB,0,0.89,0.9090909090909091
+gpt-3.5-turbo,285,Mathematical analysis: Numerical analysis,Numerical Methods for Engineers,0,0.0,0.0
+gpt-3.5-turbo,286,Mathematical analysis: Numerical analysis,Applied Numerical Methods using MATLAB,0,0.0,0.0
+gpt-3.5-turbo,287,Mathematical analysis: Numerical analysis,Introduction to Numerical Analysis,0,0.78,0.8154761904761905
+gpt-3.5-turbo,288,Mathematical analysis: Numerical analysis,Numerical Analysis and Scientific Computing,0,0.0,0.0
+gpt-3.5-turbo,289,Mathematical analysis: Numerical analysis,Numerical Methods for Scientific Computing,0,0.6666666666666667,0.6666666666666667
+gpt-3.5-turbo,405,Electronic design automation: Logic synthesis,Logic Synthesis for Low Power VLSI Designs,0,0.7777666666666666,0.8
+gpt-3.5-turbo,406,Electronic design automation: Logic synthesis,Introduction to Logic Synthesis,0,0.5,0.711111111111111
+gpt-3.5-turbo,407,Electronic design automation: Logic synthesis,Logic Synthesis and Verification Algorithms,0,0.0,0.0
+gpt-3.5-turbo,408,Electronic design automation: Logic synthesis,Advanced Logic Synthesis,0,1.0,1.0
+gpt-3.5-turbo,409,Electronic design automation: Logic synthesis,Logic Synthesis Using Synopsys,0,1.0,1.0
+gpt-3.5-turbo,640,Embedded and cyber-physical systems: Sensor networks,Wireless Sensor Networks: A Review on Recent Developments and Potential Agricultural Applications,1,1.0,1.0
+gpt-3.5-turbo,641,Embedded and cyber-physical systems: Sensor networks,A Survey on Sensor Networks and their Applications in Civil Engineering,1,1.0,1.0
+gpt-3.5-turbo,642,Embedded and cyber-physical systems: Sensor networks,Smart Cities: An Overview of Sensor Networks for Modern Cities,1,1.0,1.0
+gpt-3.5-turbo,643,Embedded and cyber-physical systems: Sensor networks,Energy-Efficient Coverage in Sensor Networks,0,0.7233333333333333,0.8424242424242424
+gpt-3.5-turbo,644,Embedded and cyber-physical systems: Sensor networks,Secure and Efficient Data Transmission in Internet of Things Sensor Networks,1,1.0,1.0
+gpt-3.5-turbo,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Combinatorial Generation: How to Generate All the Combinatorial Structures from a Finite Set of Elements,1,0.33333333333333337,0.5333333333333334
+gpt-3.5-turbo,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Geometric Graphs,0,0.0,0.0
+gpt-3.5-turbo,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Exploring Randomness with Discrete Structures and Applications to Cryptography,1,1.0,1.0
+gpt-3.5-turbo,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Combinatorial Algorithms: Generation Enumeration and Search,0,0.6133333333333333,0.7986531986531986
+gpt-3.5-turbo,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",A Course in Combinatorics,0,0.0,0.0
+gpt-3.5-turbo,710,Information systems applications: Mobile information processing systems,Mobile information systems: a review of research and framework development,1,1.0,1.0
+gpt-3.5-turbo,711,Information systems applications: Mobile information processing systems,Designing mobile information systems for healthcare,1,1.0,1.0
+gpt-3.5-turbo,712,Information systems applications: Mobile information processing systems,Exploring the relationship between mobile information systems and user satisfaction: A case of ERP systems by the empowerment perspective,1,1.0,1.0
+gpt-3.5-turbo,713,Information systems applications: Mobile information processing systems,User acceptance of mobile technology: a proposed framework for mobile information systems,1,1.0,1.0
+gpt-3.5-turbo,714,Information systems applications: Mobile information processing systems,Mobile information systems in supply chain: a review of research and applications,1,0.7777666666666666,0.8333333333333334
+gpt-3.5-turbo,765,Education: Distance learning,The benefits and challenges of asynchronous online discussion forums in teacher education: Perspectives of pre-service teachers,1,1.0,1.0
+gpt-3.5-turbo,766,Education: Distance learning,Designing online courses for student engagement: A comprehensive approach,1,0.5566666666666666,0.6868686868686869
+gpt-3.5-turbo,767,Education: Distance learning,The effectiveness of online learning: Beyond no significant difference and future horizons,0,0.6666666666666667,0.6666666666666667
+gpt-3.5-turbo,768,Education: Distance learning,Distance learning programme in a developing country: Perceptions of students and tutors,1,1.0,1.0
+gpt-3.5-turbo,769,Education: Distance learning,Critical success factors for e-learning implementation in higher education: A literature review,1,1.0,1.0
+gpt-3.5-turbo,795,Information theory: Coding theory,Introduction to Coding Theory,0,0.6666666666666667,0.6666666666666667
+gpt-3.5-turbo,796,Information theory: Coding theory,Elements of Information Theory,0,0.0,0.0
+gpt-3.5-turbo,797,Information theory: Coding theory,Coding and Information Theory,0,0.0,0.0
+gpt-3.5-turbo,798,Information theory: Coding theory,Modern Coding Theory,0,0.0,0.2666666666666666
+gpt-3.5-turbo,799,Information theory: Coding theory,Error-Correcting Codes and Finite Fields,0,0.0,0.0
+gpt-3.5-turbo,825,Design and analysis of algorithms: Concurrent algorithms,Concurrent Algorithms for Graph Coloring,1,1.0,1.0
+gpt-3.5-turbo,826,Design and analysis of algorithms: Concurrent algorithms,Efficient Concurrent Algorithms for Priority Queues,1,0.22219999999999995,0.22222222222222232
+gpt-3.5-turbo,827,Design and analysis of algorithms: Concurrent algorithms,A Concurrent Algorithm for Finding a Hamiltonian Cycle,1,1.0,1.0
+gpt-3.5-turbo,828,Design and analysis of algorithms: Concurrent algorithms,Parallel and Concurrent Algorithms for Shortest Path Problems,1,0.89,0.9444444444444444
+gpt-3.5-turbo,829,Design and analysis of algorithms: Concurrent algorithms,Concurrent Algorithms for Sorting and Searching,1,1.0,1.0
+text-davinci-003,130,Machine learning: Learning paradigms,A Taxonomy of Machine Learning Paradigms,1,1.0,1.0
+text-davinci-003,131,Machine learning: Learning paradigms,A Comprehensive Survey on Machine Learning Paradigms,1,1.0,1.0
+text-davinci-003,132,Machine learning: Learning paradigms,Design of an Efficient Machine Learning Paradigm,1,0.9166666666666667,1.0
+text-davinci-003,133,Machine learning: Learning paradigms,A Comprehensive Overview of Machine Learning Paradigms,1,1.0,1.0
+text-davinci-003,134,Machine learning: Learning paradigms,Design and Analysis of a New Machine Learning Paradigm,1,1.0,1.0
+text-davinci-003,150,Logic: Logic and verification,Logic Synthesis and Verification Algorithms,0,1.0,1.0
+text-davinci-003,151,Logic: Logic and verification,Logic and System Verification,1,1.0,1.0
+text-davinci-003,152,Logic: Logic and verification,Verification and Synthesis of Object Oriented Logic Programs,1,1.0,1.0
+text-davinci-003,153,Logic: Logic and verification,Verification of Sequential Logic,0,1.0,1.0
+text-davinci-003,154,Logic: Logic and verification,Model Checking and Logic Verification,1,0.5,0.5
+text-davinci-003,285,Mathematical analysis: Numerical analysis,Numerical Analysis: Mathematics of Scientific Computing,0,0.0,0.0
+text-davinci-003,286,Mathematical analysis: Numerical analysis,Numerical Analysis and Scientific Computing,0,1.0,1.0
+text-davinci-003,287,Mathematical analysis: Numerical analysis,Numerical Analysis of Partial Differential Equations,0,1.0,1.0
+text-davinci-003,288,Mathematical analysis: Numerical analysis,Numerical Analysis for Engineers and Scientists,0,0.89,0.8472222222222222
+text-davinci-003,289,Mathematical analysis: Numerical analysis,Introduction to Numerical Analysis and Scientific Computing,0,1.0,1.0
+text-davinci-003,405,Electronic design automation: Logic synthesis,Verilog HDL Synthesis : A Practical Primer,0,1.0,0.8888888888888888
+text-davinci-003,406,Electronic design automation: Logic synthesis,Fundamentals of Digital Logic with Verilog Design,0,0.0,0.0
+text-davinci-003,407,Electronic design automation: Logic synthesis,Principles of CMOS VLSI Design: A Systems Perspective,0,0.0,0.0
+text-davinci-003,408,Electronic design automation: Logic synthesis,Digital Circuit Design using Verilog and SystemVerilog,1,1.0,0.9523809523809523
+text-davinci-003,409,Electronic design automation: Logic synthesis,Digital Logic Design and Synthesis with VHDL,1,1.0,1.0
+text-davinci-003,640,Embedded and cyber-physical systems: Sensor networks,Design and Performance of Wireless Sensor Networks for Urban Surveillance,1,1.0,1.0
+text-davinci-003,641,Embedded and cyber-physical systems: Sensor networks,Sensor Network: Architectures and Protocols for Scalable Coordination,1,1.0,1.0
+text-davinci-003,642,Embedded and cyber-physical systems: Sensor networks,Estimation and Control for Networked Cyber-Physical Systems,1,1.0,1.0
+text-davinci-003,643,Embedded and cyber-physical systems: Sensor networks,Fault Diagnosis for Embedded and Cyber-Physical Systems,1,0.8333333333333333,0.9444444444444444
+text-davinci-003,644,Embedded and cyber-physical systems: Sensor networks,Real-Time Data Collection and Analysis for System Design in Cyber-Physical Systems,1,1.0,1.0
+text-davinci-003,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Structures and Algorithms,0,1.0,1.0
+text-davinci-003,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures","Geometry, Randomness and Discrete Structures in Combinatorial Optimization",1,1.0,1.0
+text-davinci-003,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures","Random Walks, Random Maps and Generating Random Discrete Structures",1,1.0,1.0
+text-davinci-003,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Generators of Random Graphs and Discrete Structures,1,1.0,0.9523809523809523
+text-davinci-003,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Discrete Geometry and Random Structures,1,1.0,1.0
+text-davinci-003,710,Information systems applications: Mobile information processing systems,Mobile Computing and Applications: A Technology Update,1,1.0,1.0
+text-davinci-003,711,Information systems applications: Mobile information processing systems,Mobile Information Processing Systems and Network Security,1,1.0,1.0
+text-davinci-003,712,Information systems applications: Mobile information processing systems,Wireless and Mobile Technology Applications in Business,1,1.0,1.0
+text-davinci-003,713,Information systems applications: Mobile information processing systems,Mobile Application Development: From Mobile Information Systems to Mobile Services,1,1.0,1.0
+text-davinci-003,714,Information systems applications: Mobile information processing systems,"Supporting Mobile Information Processing in the Cloud: Security, Support and Applications",1,1.0,1.0
+text-davinci-003,765,Education: Distance learning,Distance Education: Strategies and Tools for Success,1,1.0,1.0
+text-davinci-003,766,Education: Distance learning,Distance Education in K-12 Schools,0,1.0,1.0
+text-davinci-003,767,Education: Distance learning,Distance Learning and Higher Education: Strategic Planning for the New Millennium,1,1.0,0.9761904761904762
+text-davinci-003,768,Education: Distance learning,Distance Education: An Overview of Challenges and Benefits,1,1.0,1.0
+text-davinci-003,769,Education: Distance learning,Distance Learning: Rewards and Risks of Online Education,1,1.0,1.0
+text-davinci-003,795,Information theory: Coding theory,Information and Coding Theory,0,0.6666666666666667,0.6666666666666667
+text-davinci-003,796,Information theory: Coding theory,An Introduction to Coding Theory for non-Coders,1,1.0,1.0
+text-davinci-003,797,Information theory: Coding theory,Principles of Coding Theory,0,0.9166666666666667,0.9583333333333334
+text-davinci-003,798,Information theory: Coding theory,Coding Theory and Information Theory,0,1.0,1.0
+text-davinci-003,799,Information theory: Coding theory,An Introduction to Error-Correcting Codes with Applications to Cryptography and Coding Theory,1,0.8333333333333333,0.8888888888888888
+text-davinci-003,825,Design and analysis of algorithms: Concurrent algorithms,Design and Analysis of Concurrent Algorithms in Distributed Systems,1,1.0,1.0
+text-davinci-003,826,Design and analysis of algorithms: Concurrent algorithms,Efficient Algorithm Design and Analysis for Concurrent Applications,1,1.0,1.0
+text-davinci-003,827,Design and analysis of algorithms: Concurrent algorithms,Distributed Algorithm Design and Analysis for Concurrent Systems,1,1.0,1.0
+text-davinci-003,828,Design and analysis of algorithms: Concurrent algorithms,Modeling and Analysis of Concurrent Algorithms for Networks,1,1.0,1.0
+text-davinci-003,829,Design and analysis of algorithms: Concurrent algorithms,Complexity Analysis of Concurrent Algorithms for Large-Scale Networks,1,1.0,1.0
+llama-2-7b-chat,130,Machine learning: Learning paradigms,Machine Learning: Traditional Methods and Modern Approaches,1,0.19999999999999984,0.9814814814814815
+llama-2-7b-chat,131,Machine learning: Learning paradigms,A Survey of Machine Learning Paradigms for Big Data,1,0.2333333333333334,1.0
+llama-2-7b-chat,132,Machine learning: Learning paradigms,Learning Paradigms for Deep Neural Networks,1,0.19999999999999984,0.8333333333333334
+llama-2-7b-chat,133,Machine learning: Learning paradigms,A Comprehensive Survey of Machine Learning Paradigms for Healthcare Applications,1,0.19999999999999984,0.9649122807017544
+llama-2-7b-chat,134,Machine learning: Learning paradigms,Machine Learning: A Practical Approach,0,0.19999999999999984,1.0
+llama-2-7b-chat,150,Logic: Logic and verification,Introduction to Logic and Computer Science,0,0.30000000000000016,0.8465608465608465
+llama-2-7b-chat,151,Logic: Logic and verification,Verified Proofs: A Guide to Proof Theory and Practice,1,0.2333333333333334,1.0
+llama-2-7b-chat,152,Logic: Logic and verification,The Logic of Computer Science,0,0.19999999999999984,0.9655172413793104
+llama-2-7b-chat,153,Logic: Logic and verification,Formal Logic and Automated Reasoning,0,0.19999999999999984,1.0
+llama-2-7b-chat,154,Logic: Logic and verification,Handbook of Logic in Computer Science,0,0.2666666666666666,0.9555555555555556
+llama-2-7b-chat,285,Mathematical analysis: Numerical analysis,Numerical Analysis,0,0.06666666666666676,0.9855072463768116
+llama-2-7b-chat,286,Mathematical analysis: Numerical analysis,Numerical Analysis: The Elements of Computational Mathematics,1,0.19999999999999984,0.9814814814814815
+llama-2-7b-chat,287,Mathematical analysis: Numerical analysis,Introduction to Numerical Analysis,0,0.2666666666666666,1.0
+llama-2-7b-chat,288,Mathematical analysis: Numerical analysis,Numerical Analysis: A Comprehensive Introduction,0,0.19999999999999984,0.9722222222222222
+llama-2-7b-chat,289,Mathematical analysis: Numerical analysis,Mathematical Numerical Analysis,0,0.19999999999999984,1.0
+llama-2-7b-chat,405,Electronic design automation: Logic synthesis,Logic Synthesis: A Survey of Recent Trends and Techniques,1,0.1333333333333333,0.9696969696969697
+llama-2-7b-chat,406,Electronic design automation: Logic synthesis,A Survey of Electronic Design Automation (EDA) Tools and Techniques for Logic Synthesis,1,0.19999999999999984,1.0
+llama-2-7b-chat,407,Electronic design automation: Logic synthesis,Logic Synthesis: A Review of the State of the Art and Future Challenges,1,0.19999999999999984,0.9901960784313726
+llama-2-7b-chat,408,Electronic design automation: Logic synthesis,Electronic Design Automation for Logic Circuits: A Comprehensive Review,1,0.19999999999999984,0.7777777777777778
+llama-2-7b-chat,409,Electronic design automation: Logic synthesis,Logic Synthesis in the Era of Artificial Intelligence: A Review and Future Directions,1,0.19999999999999984,1.0
+llama-2-7b-chat,640,Embedded and cyber-physical systems: Sensor networks,Sensor Networks and Fog Computing: A Survey,1,0.19999999999999984,1.0
+llama-2-7b-chat,641,Embedded and cyber-physical systems: Sensor networks,Cyber-Physical Systems: A Survey,0,0.19999999999999984,1.0
+llama-2-7b-chat,642,Embedded and cyber-physical systems: Sensor networks,Embedded Systems: A Contemporary Design Tool,0,0.1333333333333333,1.0
+llama-2-7b-chat,643,Embedded and cyber-physical systems: Sensor networks,Sensor Networks: The Next Generation,1,0.19999999999999984,1.0
+llama-2-7b-chat,644,Embedded and cyber-physical systems: Sensor networks,Fog Computing for IoT and Cyber-Physical Systems: A Survey,1,0.19999999999999984,0.711111111111111
+llama-2-7b-chat,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Graphs,0,0.1333333333333333,0.9523809523809523
+llama-2-7b-chat,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Combinatorial Structures,0,0.19999999999999984,1.0
+llama-2-7b-chat,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Discrete Ergodic Theory and Applications,1,0.2333333333333334,1.0
+llama-2-7b-chat,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Geometry and Random Graphs,1,0.30000000000000016,0.9259259259259259
+llama-2-7b-chat,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Combinatorial Random Structures,1,0.19999999999999984,0.9153439153439153
+llama-2-7b-chat,710,Information systems applications: Mobile information processing systems,Mobile Information Processing Systems: A Survey,1,0.19999999999999984,1.0
+llama-2-7b-chat,711,Information systems applications: Mobile information processing systems,Information Systems Applications in Mobile Commerce,1,0.2333333333333334,1.0
+llama-2-7b-chat,712,Information systems applications: Mobile information processing systems,"Mobile Information Systems: Concepts, Applications, and Challenges",1,0.2333333333333334,0.9523809523809523
+llama-2-7b-chat,713,Information systems applications: Mobile information processing systems,Designing and Developing Mobile Information Systems: A Practical Approach,1,0.2666666666666666,1.0
+llama-2-7b-chat,714,Information systems applications: Mobile information processing systems,Mobile Information Processing: A Textbook on Handheld Computing,1,0.21666666666666667,1.0
+llama-2-7b-chat,765,Education: Distance learning,Distance Learning: A Reference Handbook,1,0.2333333333333334,0.9824561403508771
+llama-2-7b-chat,766,Education: Distance learning,The Future of Distance Education,0,0.19999999999999984,1.0
+llama-2-7b-chat,767,Education: Distance learning,Distance Learning: Challenges and Opportunities,0,0.2333333333333334,0.8703703703703703
+llama-2-7b-chat,768,Education: Distance learning,Handbook of Distance Learning,0,0.19999999999999984,1.0
+llama-2-7b-chat,769,Education: Distance learning,"Distance Learning: A Guide to Planning, Implementing, and Evaluating Programs",1,0.21666666666666667,1.0
+llama-2-7b-chat,795,Information theory: Coding theory,"Coding Theory: Basics, Algorithms, and Applications",1,0.19999999999999984,1.0
+llama-2-7b-chat,796,Information theory: Coding theory,Introduction to Information Theory: Fundamentals and Applications,1,0.19999999999999984,0.9777777777777777
+llama-2-7b-chat,797,Information theory: Coding theory,Coding for Data Compression and Communication,1,0.19999999999999984,0.9866666666666667
+llama-2-7b-chat,798,Information theory: Coding theory,Information Theory and Coding for Data Networks,1,0.19999999999999984,0.7473544973544974
+llama-2-7b-chat,799,Information theory: Coding theory,Coding Theory and Network Information Theory,1,0.19999999999999984,1.0
+llama-2-7b-chat,825,Design and analysis of algorithms: Concurrent algorithms,Concurrent and Parallel Algorithms,0,0.19999999999999984,0.7428571428571429
+llama-2-7b-chat,826,Design and analysis of algorithms: Concurrent algorithms,Concurrent Algorithms,0,0.19999999999999984,0.8888888888888888
+llama-2-7b-chat,827,Design and analysis of algorithms: Concurrent algorithms,Design and Analysis of Concurrent and Parallel Systems,1,0.19999999999999984,1.0
+llama-2-7b-chat,828,Design and analysis of algorithms: Concurrent algorithms,Concurrent Data Structures and Algorithms,0,0.19999999999999984,0.9848484848484849
+llama-2-7b-chat,829,Design and analysis of algorithms: Concurrent algorithms,Parallel and Concurrent Programming,0,0.19999999999999984,1.0
+llama-2-13b-chat,130,Machine learning: Learning paradigms,Supervised Learning,0,0.33333333333333337,0.8333333333333334
+llama-2-13b-chat,131,Machine learning: Learning paradigms,Unsupervised Learning,0,0.25,0.832010582010582
+llama-2-13b-chat,132,Machine learning: Learning paradigms,Reinforcement Learning,0,0.1333333333333333,0.0
+llama-2-13b-chat,133,Machine learning: Learning paradigms,Linear Learning,0,0.25,1.0
+llama-2-13b-chat,134,Machine learning: Learning paradigms,Deep Learning,0,0.2833333333333333,0.6666666666666667
+llama-2-13b-chat,150,Logic: Logic and verification,Formal Logic: A Pragmatic Introduction,1,0.29999999999999993,1.0
+llama-2-13b-chat,151,Logic: Logic and verification,Modern Logic and its Applications,0,0.29999999999999993,0.7555555555555555
+llama-2-13b-chat,152,Logic: Logic and verification,Logic and Verification in Computer Science,1,0.25,0.9166666666666666
+llama-2-13b-chat,153,Logic: Logic and verification,Formal Verification: A Guide to the Basics,1,0.35,1.0
+llama-2-13b-chat,154,Logic: Logic and verification,Proof and Verification in Logic and Computer Science,1,0.25,1.0
+llama-2-13b-chat,285,Mathematical analysis: Numerical analysis,Numerical Analysis,0,0.35,0.75
+llama-2-13b-chat,286,Mathematical analysis: Numerical analysis,Numerical Methods for Ordinary Differential Equations,0,0.25,0.8023809523809524
+llama-2-13b-chat,287,Mathematical analysis: Numerical analysis,Numerical Linear Algebra,0,0.29999999999999993,1.0
+llama-2-13b-chat,288,Mathematical analysis: Numerical analysis,Numerical Analysis and Scientific Computing,0,0.4,1.0
+llama-2-13b-chat,289,Mathematical analysis: Numerical analysis,Numerical Recipes: The Art of Scientific Computing,0,0.06666666666666676,0.0
+llama-2-13b-chat,405,Electronic design automation: Logic synthesis,A Survey of Logic Synthesis Techniques for FPGAs,1,0.25,1.0
+llama-2-13b-chat,406,Electronic design automation: Logic synthesis,Logic Synthesis for Low-Power Digital CMOS VLSI Circuits,1,0.31666666666666676,0.9583333333333334
+llama-2-13b-chat,407,Electronic design automation: Logic synthesis,High-Level Synthesis for Digital Circuit Design,1,0.29999999999999993,0.8888888888888888
+llama-2-13b-chat,408,Electronic design automation: Logic synthesis,Logic Synthesis and Optimization for Embedded Systems,1,0.35,0.9523809523809523
+llama-2-13b-chat,409,Electronic design automation: Logic synthesis,Formal Verification of Digital Circuits Using Logic Synthesis,1,0.35,0.9230769230769231
+llama-2-13b-chat,640,Embedded and cyber-physical systems: Sensor networks,Cyber-Physical Sensor Networks: A Survey,1,0.4,1.0
+llama-2-13b-chat,641,Embedded and cyber-physical systems: Sensor networks,Embedded and Cyber-Physical Systems: Sensor Networks and Their Applications,1,0.3666666666666667,1.0
+llama-2-13b-chat,642,Embedded and cyber-physical systems: Sensor networks,Sensor Networks for Embedded and Cyber-Physical Systems: A Review,1,0.2666666666666666,1.0
+llama-2-13b-chat,643,Embedded and cyber-physical systems: Sensor networks,Real-Time Sensor Networks for Cyber-Physical Systems,1,0.3666666666666667,1.0
+llama-2-13b-chat,644,Embedded and cyber-physical systems: Sensor networks,Cyber-Physical Sensor Networks: Challenges and Opportunities,1,0.4,0.9444444444444444
+llama-2-13b-chat,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Geometric Graphs,0,0.2333333333333334,0.6666666666666667
+llama-2-13b-chat,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Discrete and Computational Geometry,0,0.25,1.0
+llama-2-13b-chat,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Combinatorial Structures in Random Graphs,1,0.2333333333333334,0.5694444444444444
+llama-2-13b-chat,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Randomized Algorithms for Discrete Structures,1,0.6666666666666667,0.6666666666666667
+llama-2-13b-chat,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Probabilistic Methods for Discrete and Computational Geometry,1,0.35,0.8055555555555556
+llama-2-70b-chat,130,Machine learning: Learning paradigms,Supervised Learning,0,0.6666666666666667,0.6666666666666667
+llama-2-70b-chat,131,Machine learning: Learning paradigms,Unsupervised Learning,0,0.33333333333333337,0.6666666666666667
+llama-2-70b-chat,132,Machine learning: Learning paradigms,Reinforcement Learning,0,0.0,0.0
+llama-2-70b-chat,133,Machine learning: Learning paradigms,Deep Learning,0,0.22219999999999995,0.0
+llama-2-70b-chat,134,Machine learning: Learning paradigms,Transfer Learning,0,0.0,0.0
+llama-2-70b-chat,150,Logic: Logic and verification,Introduction to Logic and Verification,1,0.4455333333333332,0.8833333333333333
+llama-2-70b-chat,151,Logic: Logic and verification,Logic and Verification: An Introduction to Model Checking,1,0.33329999999999993,0.5888888888888888
+llama-2-70b-chat,152,Logic: Logic and verification,The Logic of Proof and Verification,1,0.0,0.0
+llama-2-70b-chat,153,Logic: Logic and verification,Verification and Validation in Logic,1,0.8,1.0
+llama-2-70b-chat,154,Logic: Logic and verification,Logic-Based Verification of Computational Systems,1,0.4,0.8963383838383838
+llama-2-70b-chat,285,Mathematical analysis: Numerical analysis,Numerical Analysis,0,0.4,0.9696969696969697
+llama-2-70b-chat,286,Mathematical analysis: Numerical analysis,Introduction to Numerical Analysis,0,0.4110999999999999,0.9153439153439153
+llama-2-70b-chat,287,Mathematical analysis: Numerical analysis,Numerical Methods for Mathematical Analysis,1,0.5777666666666665,0.9583333333333334
+llama-2-70b-chat,288,Mathematical analysis: Numerical analysis,Numerical Computation: A Mathematical Introduction,1,0.7777666666666667,0.9259259259259259
+llama-2-70b-chat,289,Mathematical analysis: Numerical analysis,Numerical Analysis: A Modern Introduction,0,0.3777666666666666,0.6759259259259259
+llama-2-70b-chat,405,Electronic design automation: Logic synthesis,Logic Synthesis: A Survey of Recent Techniques and Tools,1,0.7333333333333334,0.9814814814814815
+llama-2-70b-chat,406,Electronic design automation: Logic synthesis,Electronic Design Automation: Logic Synthesis and Floorplanning,1,0.6666666666666667,0.9682539682539683
+llama-2-70b-chat,407,Electronic design automation: Logic synthesis,Logic Synthesis for Digital Circuit Design: A Review,1,0.35553333333333326,0.9333333333333333
+llama-2-70b-chat,408,Electronic design automation: Logic synthesis,Efficient Logic Synthesis Techniques for VLSI Design,1,0.7333333333333334,1.0
+llama-2-70b-chat,409,Electronic design automation: Logic synthesis,Logic Synthesis and Optimization in Digital Design Automation,1,0.5900000000000001,0.8767724867724868
+llama-2-70b-chat,640,Embedded and cyber-physical systems: Sensor networks,Sensor Networks: A Survey,0,0.8,0.8666666666666667
+llama-2-70b-chat,641,Embedded and cyber-physical systems: Sensor networks,Embedded Systems: A Contemporary Design Tool,0,0.0,0.0
+llama-2-70b-chat,642,Embedded and cyber-physical systems: Sensor networks,Cyber-Physical Systems: A New Frontier in Engineering,1,0.5333333333333334,0.6388888888888888
+llama-2-70b-chat,643,Embedded and cyber-physical systems: Sensor networks,Sensor Networks and Big Data,0,0.4,0.7534621578099839
+llama-2-70b-chat,644,Embedded and cyber-physical systems: Sensor networks,Real-Time Systems: Formal Specification and Analysis,1,0.7777666666666667,0.9555555555555556
+llama-2-70b-chat,655,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Random Geometric Graphs,0,0.7777666666666667,0.7777777777777778
+llama-2-70b-chat,656,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Discrete and Computational Geometry: An Introduction,1,0.0,0.0
+llama-2-70b-chat,657,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Combinatorial Geometry with Applications,0,0.7777666666666667,0.8956228956228957
+llama-2-70b-chat,658,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Generating Random Combinatorial Structures: A Survey,1,0.7777666666666667,0.8518518518518519
+llama-2-70b-chat,659,"Randomness, geometry and discrete structures: Generating random combinatorial structures",Randomized Algorithms for Combinatorial Geometry,1,0.3777666666666667,0.812962962962963
+llama-2-70b-chat,710,Information systems applications: Mobile information processing systems,Mobile Commerce: A Survey of the Current State and Future Trends,1,0.4,0.8727272727272727
+llama-2-70b-chat,711,Information systems applications: Mobile information processing systems,Location-Based Services: A Survey of Applications and Technologies,1,0.31110000000000004,0.8222222222222222
+llama-2-70b-chat,712,Information systems applications: Mobile information processing systems,Mobile Payment Systems: A Review of the Current State and Future Prospects,1,0.8,0.9824561403508771
+llama-2-70b-chat,713,Information systems applications: Mobile information processing systems,Mobile Healthcare: A Review of the Current State and Future Directions,1,0.9333333333333333,1.0
+llama-2-70b-chat,714,Information systems applications: Mobile information processing systems,Mobile Learning: A Review of the Current State and Future Trends,1,0.7333333333333334,1.0
+llama-2-70b-chat,765,Education: Distance learning,The Impact of Distance Learning on Student Outcomes,1,0.7333333333333334,1.0
+llama-2-70b-chat,766,Education: Distance learning,A Comparison of Online and Traditional Learning Methods in Higher Education,1,0.9333333333333333,1.0
+llama-2-70b-chat,767,Education: Distance learning,Designing Effective Online Learning Experiences: A Practical Guide,1,0.5111,0.9743589743589743
+llama-2-70b-chat,768,Education: Distance learning,"The Future of Distance Education: New Technologies, New Pedagogies",1,0.8666666666666667,1.0
+llama-2-70b-chat,769,Education: Distance learning,Facilitating Online Discussions: A Guide for Instructors,1,0.7333333333333334,1.0
+llama-2-70b-chat,795,Information theory: Coding theory,Fundamentals of Coding Theory,0,0.35553333333333326,0.8592592592592593
+llama-2-70b-chat,796,Information theory: Coding theory,Introduction to Coding Theory,0,0.33329999999999993,0.6626984126984128
+llama-2-70b-chat,797,Information theory: Coding theory,Coding Theory and Its Applications,0,0.8,0.962962962962963
+llama-2-70b-chat,798,Information theory: Coding theory,Error-Correcting Codes,0,0.6333333333333333,0.9305555555555556
+llama-2-70b-chat,799,Information theory: Coding theory,Compression and Coding for Big Data,1,0.89,0.9791666666666666
+llama-2-70b-chat,825,Design and analysis of algorithms: Concurrent algorithms,Concurrent Algorithms: A Modern Approach,1,0.8,0.9507936507936507
+llama-2-70b-chat,826,Design and analysis of algorithms: Concurrent algorithms,Design and Analysis of Concurrent Algorithms,1,1.0,1.0
+llama-2-70b-chat,827,Design and analysis of algorithms: Concurrent algorithms,Concurrent Data Structures and Algorithms,0,0.8666666666666667,0.9058201058201059
+llama-2-70b-chat,828,Design and analysis of algorithms: Concurrent algorithms,The Art of Concurrent Programming,0,0.7777666666666667,0.9
+llama-2-70b-chat,829,Design and analysis of algorithms: Concurrent algorithms,Concurrency: A Guide to Concurrent Programming,1,0.7566666666666667,0.9393939393939394
