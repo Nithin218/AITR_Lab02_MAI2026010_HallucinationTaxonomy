@@ -1,0 +1,5 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+model Qwen/Qwen2.5-1.5B-Instruct revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 device mps
+[1/2] Logic: Logic and verification: 5 titles (agrawal), 334s {'main': 15.02, 'samples': 125.47, 'logprob': 1.32, 'dq': 47.87, 'iq': 141.94, 'verbal': 2.64}
+/opt/anaconda3/lib/python3.13/multiprocessing/resource_tracker.py:301: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-65467-fthp85mp'}
+  warnings.warn(

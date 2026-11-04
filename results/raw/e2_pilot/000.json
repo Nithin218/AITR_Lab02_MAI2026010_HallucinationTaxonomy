@@ -1,0 +1,323 @@
+{
+ "topic": "Logic: Logic and verification",
+ "seed": 2026,
+ "main_answer": "- 1. \"Logic and Verification\" - Wikipedia\n\n- 2. \"Logic in Computer Science: Modelling and Reasoning about Systems\" - Michael Huth and Mark Ryan\n\n- 3. \"Introduction to Formal Languages, Automata Theory, Computation and Complexity\" - John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman\n\n- 4. \"Formal Methods for Software Engineering\" - David A. Basin, Peter Canning, Martin Wirsing\n\n- 5. \"Programming Language Pragmatics\" - Andrew Appel",
+ "parse_method": "agrawal",
+ "n_titles": 5,
+ "samples": [
+  "- 1. \"Logic Programming\" (Ralf-Uwe Müller)\n- 2. \"Model Checking\" (C. Hermanczyk & D. Pappas)\n- 3. \"Introduction to Automata Theory\" (John E. Hopcroft et al.)\n- 4. \"Formal Methods in Software Engineering\" (S. Barry Pope)\n- 5. \"The Elements of Computing Systems\" (Thomas A. DePuy)",
+  "- 1. \"The Art of Proving: Methods and Motivation\" - \"<Title>\"\n- 2. \"Automated Reasoning with Deduction Systems\" - \"<Title>\"\n- 3. \"Formal Methods for System Design\" - \"<Title>\"\n- 4. \"Axiomatic Method in Computer Science\" - \"<Title>\"\n- 5. \"Verification in Modern Software Engineering\" - \"<Title>\"",
+  "- 1. \"Logic: A Constructivist Perspective\" - 2. \"The Logic of Computer Science: An Introduction for Students of Computing\" - 3. \"The Art of Proving in Analysis: With an Elementary Proof of the Fundamental Theorem of Algebra\" - 4. \"Programming Languages and Systems: Theory and Design\" - 5. \"Logic for Computer Science\"",
+  "1. \"Logical Verification of Hardware and Software\" - <https://www.sciencedirect.com/book/9780262332428/logical-verification-of-hardware-and-software>\n2. \"A Primer on Model Checking\" - <http://citeseer.ist.psu.edu/viewdoc/download?doi=10.1.1.31.9742&rep=rep1&type=pdf>\n3. \"Formal Methods in Computer-Aided Design (FMCAD)\" - <https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8279>\n4. \"Verification: From Theory to Practice\" - <https://books.google.com/books/about/Verification_from_Theory_to_Practice.html?id=nKwQJgEACAAJ>\n5. \"Software Verification Handbook\" - <https://books.google.com/books/about/Software_Verification_Handbook.html?id=jTbOAgAACAAJ>",
+  "- 1. \"Logic in Computer Science\" - \"A Gentle Introduction\"\n\n- 2. \"Logical Foundations of Programming Languages\" - Multiple Authors\n\n- 3. \"Program Verifiability and Program Semantics\" - Multiple Authors\n\n- 4. \"Formal Methods Handbook\" - Multiple Authors\n\n- 5. \"Introduction to Formal Methods for Embedded Software\" - Multiple Authors",
+  "1. Chapter 4: Verification with Hoare Logic, Part I - An Introduction to Mathematical Proofs for Computer Science Students\n\n2. Logical Frameworks for Reasoning About Computation \n\n3. Formal Methods - A Guide to Automated Software Verification\n\n4. The Curry-Howard Isomorphism\n\n5. Programming Languages - A Logical Approach",
+  "- 1. \"A Logical Approach to Computer Science: Fundamentals via Predicate Calculus\" - 2. \"Introduction to Automata Theory, Languages, and Computation\" - 3. \"Formal Methods for Software Engineering\" - 4. \"The Principles of Programming Languages\" - 5. \"Formal Specification and Validation\"",
+  "1. \"Principles of Automated Reasoning\" edited by Daniel Kroonteghem - \"Logic Programming\"\n2. \"Formal Methods in Software Engineering\" edited by J.-Y. Girard et al., Kluwer Academic Publishers - \"Model Checking\"\n3. \"Program Logics for Concurrent Object-Based Systems\" by Jean-Jacques Levy - \"Object-Oriented Programming\"\n4. \"Introduction to Formal Languages with Algebraic Semantics\" by M.H.Raychaudhuri, D.R.Phillips - \"Syntax and Semantics\"\n5. \"Mathematical Tools for Physics\" by James R. Hook - \"Calculus\"",
+  "1. Logical Foundations of Computer Science (ISBN: [ISSN])\n2. Principles of Hardware Verification (by John M. Dwyer)\n3. Formal Methods in Software Engineering (by David Broman)\n4. Model Checking (by Cristian Sibert)\n5. Automated Reasoning: Theory and Practice (by John McCarthy)",
+  "- 1. \"Logics\" - Chapter 2. \"A Mathematical Approach to Verification in Computer Science\"\n\n- 2. \"Formal Methods for the Design and Analysis of Digital Systems\" - Chapter 3. \"Model Checking with Binary Decision Diagrams\"\n\n- 3. \"Verification of Real-Time Distributed Algorithms\" - Chapter 4. \"Logical Foundations of Parallel Programming\"\n\n- 4. \"Automated Reasoning\" - Section 7. \"Modal Logics in Program Verification\"\n\n- 5. \"Introduction to Formal Language Theory\" - Chapter 6. \"Syntactic Semantics and Verification in Language Processing Systems\""
+ ],
+ "refs": [
+  {
+   "pos": 1,
+   "title": "Logic and Verification",
+   "nll": 0.41970470547676086,
+   "dq1": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes."
+   ],
+   "dq2": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "No.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq3": [
+    "Yes.",
+    "Yes.",
+    "No.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "No."
+   ],
+   "iq": [
+    "AUTHORS: John Martin Fischer, Robert Harper",
+    "Authors: Martin Renouard, Nicolas Sankowski",
+    "AUTHORS: John Martin, Jean-Yves Marion"
+   ],
+   "iq_judge": [
+    "ANS: 0\nJUSTIFICATION: The first list contains \"Martin Renouard\" and \"Nicolas Sankowski\", which are distinct individuals. The second list contains \"John Martin Fischer\" and \"Robert Harper\", also distinct individuals. Since both lists contain different sets of unique authors, there is no overlap.\n\nThe answer is 0 because there is no common element between the two lists that could be considered an overlap based on the given criteria.",
+    "ANS: 83.33%\nJUSTIFICATION: The first list contains \"John Martin\" and \"Jean-Yves Marion\". The second list contains \"John Martin Fischer\" and \"Robert Harper\". While both lists include \"John Martin\", they differ significantly due to the inclusion of different authors (\"Fischer\" and \"Harper\"). There is no substantial overlap beyond this common name. Therefore, the overlap percentage is approximately 83.33%.",
+    "ANS: 50\nJUSTIFICATION: The first list contains \"John Martin\" and \"Jean-Yves Marion,\" while the second list includes \"Martin Renouard\" and \"Nicolas Sankowski.\" There is no significant overlap in these author names, so the overlap percentage is around 50%."
+   ],
+   "iq_frac": [
+    0.0,
+    0.8332999999999999,
+    0.5
+   ],
+   "verbal": "95",
+   "verbal_p": 95.0
+  },
+  {
+   "pos": 2,
+   "title": "Logic in Computer Science: Modelling and Reasoning about Systems",
+   "nll": 0.4481923580169678,
+   "dq1": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq2": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq3": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "iq": [
+    "AUTHORS: Michael R. A. Huth, David J. Wesley",
+    "- AUTHORS: Michael Huth, Christopher W. Read",
+    "AUTHORS: Michael Huth, Patrick Wayne Wieland"
+   ],
+   "iq_judge": [
+    "ANS: 85\nJUSTIFICATION: The first list contains \"Michael Huth\" and \"Christopher W. Read\". The second list contains \"Michael R. A. Huth\" and \"David J. Wesley\". While both lists contain different spellings of the same person's name, they share common elements that suggest some level of overlap. Specifically, both lists include someone named \"Michael Huth\", which indicates a significant degree of similarity in their content. However, due to the differences in other names and titles, this overlap is relatively low at around 85%.",
+    "ANS: 85\nJUSTIFICATION: The first name \"Michael\" appears twice but with different last names (\"Huth\" vs. \"Wieland\"). The second name \"R.\" is present only once in both lists. Therefore, there is an overlap of about 85% due to the shared first name and similar spelling of the second name.",
+    "ANS: 85\nJUSTIFICATION: The first list contains \"Michael Huth\" twice, which means it has one duplicate name. The second list also contains \"Michael Huth,\" but it does not have any other duplicates. Therefore, they share 3 out of 4 unique names, resulting in an overlap of approximately 75%. However, since we need to ignore minor variations like middle initials or accents, we can consider this overlap as 85% due to the presence of the same name in both lists."
+   ],
+   "iq_frac": [
+    0.85,
+    0.85,
+    0.85
+   ],
+   "verbal": "95",
+   "verbal_p": 95.0
+  },
+  {
+   "pos": 3,
+   "title": "Introduction to Formal Languages, Automata Theory, Computation and Complexity",
+   "nll": 0.5835984349250793,
+   "dq1": [
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes"
+   ],
+   "dq2": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq3": [
+    "No.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "iq": [
+    "Authors: Hopcroft, J.E., Ullman, J.D.",
+    "Authors: John C. Martin",
+    "Authors: Hopcroft - John E., Motwani - Rajeev, Ullman - Jeffrey D."
+   ],
+   "iq_judge": [
+    "ANS: 50\nJUSTIFICATION: The first list contains only one name, \"John C. Martin\". The second list contains two names, \"Hopcroft\" and \"Ullman\". There is no significant overlap between these two sets of names. Therefore, the overlap percentage is calculated based on the total unique elements in both lists, which results in an overlap of approximately 50%.",
+    "ANS: 95\nJUSTIFICATION: The first list contains three distinct authors: Hopcroft, Motwani, and Ullman. The second list combines these into single entries for \"Hopcroft\" and \"Ullman\". While they share common last names, the combination results in fewer unique author names compared to the original list, indicating a significant overlap of about 95%.",
+    "ANS: 0\nJUSTIFICATION: The first list contains three distinct authors: Hopcroft, Motwani, and Ullman. The second list contains only one author named John C. Martin. There is no overlap between the two lists, so the percentage of overlap is 0%."
+   ],
+   "iq_frac": [
+    0.5,
+    0.95,
+    0.0
+   ],
+   "verbal": "95",
+   "verbal_p": 95.0
+  },
+  {
+   "pos": 4,
+   "title": "Formal Methods for Software Engineering",
+   "nll": 0.8943210244178772,
+   "dq1": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq2": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes",
+    "Yes."
+   ],
+   "dq3": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes."
+   ],
+   "iq": [
+    "- AUTHORS: Jones, Smith, Doe",
+    "AUTHORS: David Gries, Fred Hightower",
+    "Werner Damm, Martin Kleppmann"
+   ],
+   "iq_judge": [
+    "ANS: 0\nJUSTIFICATION: The first list contains two distinct authors: \"David Gries\" and \"Fred Hightower\". The second list contains three different authors: \"Jones\", \"Smith\", and \"Doe\". Since these are separate lists without any common elements, there is no overlap in the author names. Therefore, the overlap percentage is 0%.",
+    "ANS: 0\nJUSTIFICATION: The first list contains two distinct authors: Werner Damm and Martin Kleppmann. The second list contains three authors: Jones, Smith, and Doe. Since these are separate lists without any common elements, there is no overlap in the author names. Therefore, the overlap percentage is 0%.",
+    "ANS: 50\nJUSTIFICATION: The first list contains two distinct authors: Werner Damm and Martin Kleppmann. The second list contains two distinct authors: David Gries and Fred Hightower. There is no significant overlap between the two sets of authors. Therefore, the overlap percentage is calculated based on the total number of unique authors in both lists, which results in an average overlap of approximately 50%."
+   ],
+   "iq_frac": [
+    0.0,
+    0.0,
+    0.5
+   ],
+   "verbal": "95",
+   "verbal_p": 95.0
+  },
+  {
+   "pos": 5,
+   "title": "Programming Language Pragmatics",
+   "nll": 0.8602251410484314,
+   "dq1": [
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq2": [
+    "Yes",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes.",
+    "Yes."
+   ],
+   "dq3": [
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No.",
+    "No."
+   ],
+   "iq": [
+    "Authors: John Rose, Daniel Abraham",
+    "Authors: John McCarthy, Richard Gabriel, Brian Wiles",
+    "Authors: John R. Duflot, David M. Malone"
+   ],
+   "iq_judge": [
+    "ANS: 50\nJUSTIFICATION: The first list contains three authors: John McCarthy, Richard Gabriel, and Brian Wiles. The second list contains two authors: John Rose and Daniel Abraham. There is no significant overlap between these two sets of authors. Therefore, the overlap percentage is calculated based on the total possible matches, which would be 3 out of 4 unique authors from the first list matching any of the authors in the second list. This results in an overlap percentage of approximately 75%. However, since we need to express this as a percentage between 0 and 100, we round down to 50% due to rounding errors in the calculation process.",
+    "ANS: 50\nJUSTIFICATION: The first list contains \"John R. Duflot\" and \"David M. Malone\", while the second list contains \"John Rose\" and \"Daniel Abraham\". There is no significant overlap between these pairs of names. Both lists contain different authors, so the overlap percentage is low at around 50%.",
+    "ANS: 50\nJUSTIFICATION: The first list contains \"John R. Duflot\" and \"David M. Malone\", while the second list contains \"John McCarthy\", \"Richard Gabriel\", and \"Brian Wiles\". There is no direct overlap in these specific author names, but they share common last names (\"McCarthy\", \"Gabriel\", and \"Wiles\"). However, given that the question asks for an overlap based on author names without considering minor variations like middle initials or accents, we can consider this to be a low overlap score. Therefore, the answer is 50%."
+   ],
+   "iq_frac": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "verbal": "95",
+   "verbal_p": 95.0
+  }
+ ],
+ "timing_sec": {
+  "main": 15.02,
+  "samples": 125.47,
+  "logprob": 1.32,
+  "dq": 47.87,
+  "iq": 141.94,
+  "verbal": 2.64
+ },
+ "topic_index": 0,
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+ "device": "mps"
+}

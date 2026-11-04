@@ -265,3 +265,11 @@ Affected results / reruns: none.
 | N11 | Confirm the thresholds in the brief (±2.0 AUC-PR, AUROC 0.70, ΔN 0.02) | Student | OPEN |
 | N12 | Optional: request Llama-2-7B-Chat access on HF (anchor model) | Student | OPEN |
 | N13 | Prompt 05 brief to instructor (Gate G1) | Student | NEXT |
+
+### PC-004 | E2 dropped (time budget); the study is V1 + V2 + E1 + R1
+Date: 2026-11-04
+Change: E2 (new generations with Qwen2.5-1.5B, detectors D1–D6) is not run. RQ1 is answered by E1 on Agrawal et al.'s released data (6 models, 7B–GPT-4). RQ3 (sensitivity to N samples) depended on E2 samples and is dropped. RQ2 (topic familiarity) is not run in its E2 form.
+Reason: student decision ("i don't have that time can you skip this part"). Measured pilot cost on the local Mac: **334 s of generation per topic** (Logic and verification: main 15 s, samples 125 s, DQ 48 s, IQ + judge 142 s, verbal 3 s), so 100 topics ≈ 9.3 h of generation plus scoring and ~600 oracle lookups.
+Evidence kept: the one finished pilot topic (`results/raw/e2_pilot/`) shows the pipeline works (5/5 titles parsed with Agrawal's regex). The scripts (`14_e2_generate.py`, `15_e2_score.py`) stay in the repository as an unexecuted extension and are labelled so in the README.
+Were any main-set results viewed before this change? E1 results had been viewed. E2 had produced no main-set output (only 1 pilot topic). E2 was not dropped because of E1's outcome. The stated reason is time, and the protocol listed V1 + V2 + E1 + R1 as a complete study before any result existed (protocol §1).
+Deeper-analysis requirement: still met by the E1 judge-swap ablation, the refusal-rule sensitivity check (J-NLI vs J-NLI-raw), R1 (oracle robustness) and the 13B duplicate sensitivity check.
