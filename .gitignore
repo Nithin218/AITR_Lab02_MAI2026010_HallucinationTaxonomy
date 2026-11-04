@@ -8,3 +8,4 @@ data/raw/*
 # never commit credentials
 *.key
 .env
+.venv/

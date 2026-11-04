@@ -20,7 +20,7 @@ from sklearn.metrics import average_precision_score
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from aitr.seed import set_seed  # noqa: E402
+from aitr.seed import best_device, set_seed  # noqa: E402
 
 CFG = yaml.safe_load((ROOT / "configs/protocol_v1.yaml").read_text())
 TOLERANCE = 2.0  # AUC-PR points (research brief, validation gate)
@@ -29,7 +29,26 @@ TARGETS = {"SelfCheck-NLI": (92.50, 66.08, 74.14), "SelfCheck-Unigram (max)": (8
 HUMAN = {"accurate": 0.0, "minor_inaccurate": 0.5, "major_inaccurate": 1.0}  # passage score mapping (INFERRED)
 
 
-def score_passages(ds, limit, out_path):
+class BatchedNLI:
+    """Same model, pair order (sentence, sample) and P(contradiction) as SelfCheckNLI, scored in batches.
+
+    SelfCheckNLI encodes one pair per forward pass, which is ~0.5 s/pair on an Apple GPU (5-7 h for V1).
+    Equivalence with the official class is checked by --check-equivalence (baseline_validation.md).
+    """
+
+    def __init__(self, device, batch_size=8):
+        # batch size only affects speed/memory (whole passages as premises; 8 fits an 8 GB Apple GPU)
+        from aitr.judges import DebertaContradiction
+        b = CFG["baseline"]
+        self.scorer = DebertaContradiction(b["nli_model"], device, b["nli_max_length"], batch_size)
+
+    def predict(self, sentences, sampled_passages):
+        prem = [p for _ in sentences for p in sampled_passages]
+        hyp = [s for s in sentences for _ in sampled_passages]
+        return self.scorer(prem, hyp).reshape(len(sentences), len(sampled_passages)).mean(axis=1)
+
+
+def score_passages(ds, limit, out_path, impl="batched", batch_size=8):
     import torch
     from selfcheckgpt.modeling_selfcheck import SelfCheckNgram, SelfCheckNLI
     done = {}
@@ -40,8 +59,10 @@ def score_passages(ds, limit, out_path):
     todo = [i for i in range(min(limit, len(ds))) if i not in done]
     print(f"passages: {len(done)} cached, {len(todo)} to score")
     if todo:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        nli, uni = SelfCheckNLI(device=device), SelfCheckNgram(n=1)
+        device = torch.device(best_device())
+        print(f"device: {device}")
+        nli = SelfCheckNLI(device=device) if impl == "official" else BatchedNLI(str(device), batch_size)
+        uni = SelfCheckNgram(n=1)
         t0 = time.time()
         with open(out_path, "a", encoding="utf-8") as f:
             for k, i in enumerate(todo):
@@ -86,12 +107,30 @@ def evaluate(ds, recs):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=10**9, help="score only the first N passages (smoke test)")
+    ap.add_argument("--impl", choices=["batched", "official"], default="batched",
+                    help="NLI implementation: batched (default) or the official one-pair-at-a-time SelfCheckNLI")
+    ap.add_argument("--batch-size", type=int, default=8)
+    ap.add_argument("--check-equivalence", action="store_true",
+                    help="compare batched NLI with the cached official scores and exit")
     args = ap.parse_args()
     set_seed(CFG["seeds"]["global"])
     from datasets import load_dataset
     ds = load_dataset(CFG["data"]["wikibio_dataset"], split=CFG["data"]["wikibio_split"])
     (ROOT / "results/raw").mkdir(parents=True, exist_ok=True)
-    recs = score_passages(ds, args.limit, ROOT / "results/raw/v1_selfcheck_scores.jsonl")
+    official_path = ROOT / "results/raw/v1_selfcheck_scores_official.jsonl"
+    if args.check_equivalence:
+        official = [json.loads(l) for l in official_path.read_text(encoding="utf-8").splitlines()]
+        nli = BatchedNLI(best_device(), args.batch_size)
+        diffs = []
+        for rec in official:
+            row = ds[rec["idx"]]
+            ours = nli.predict(row["gpt3_sentences"], row["gpt3_text_samples"])
+            diffs += list(np.abs(np.array(ours) - np.array(rec["nli"])))
+        print(f"equivalence: {len(official)} passages, {len(diffs)} sentence scores, "
+              f"max |batched - official| = {max(diffs):.2e}, mean = {np.mean(diffs):.2e}")
+        return
+    path = official_path if args.impl == "official" else ROOT / "results/raw/v1_selfcheck_scores.jsonl"
+    recs = score_passages(ds, args.limit, path, args.impl, args.batch_size)
     out = evaluate(ds, recs)
     suffix = "" if len(recs) == len(ds) else f"_first{len(recs)}"
     path = ROOT / f"results/v1_selfcheck{suffix}.csv"

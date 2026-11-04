@@ -21,7 +21,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from aitr import agrawal, judges, splits  # noqa: E402
 from aitr.metrics import cluster_bootstrap_auc, paired_delta  # noqa: E402
-from aitr.seed import set_seed  # noqa: E402
+from aitr.seed import best_device, set_seed  # noqa: E402
 
 CFG = yaml.safe_load((ROOT / "configs/protocol_v1.yaml").read_text())
 IQ = ["iq_1", "iq_2", "iq_3"]
@@ -75,8 +75,8 @@ def main():
     if "str" in use:
         df["j_str"] = [judges.j_str([r[c] for c in IQ]) for _, r in df.iterrows()]
     if "nli" in use:
-        import torch
-        device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
+        device = args.device or best_device()
+        print(f"device: {device}")
         scorer = judges.DebertaContradiction(CFG["baseline"]["nli_model"], device,
                                              CFG["baseline"]["nli_max_length"], CFG["baseline"]["nli_batch_size"])
         (ROOT / "results/raw").mkdir(parents=True, exist_ok=True)

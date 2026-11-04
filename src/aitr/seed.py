@@ -5,6 +5,16 @@ import random
 import numpy as np
 
 
+def best_device() -> str:
+    """cuda (Colab) > mps (Apple GPU) > cpu."""
+    import torch
+    if torch.cuda.is_available():
+        return "cuda"
+    if torch.backends.mps.is_available():
+        return "mps"
+    return "cpu"
+
+
 def set_seed(seed: int, deterministic: bool = False) -> None:
     """Seed Python, NumPy and (if installed) PyTorch.
 
