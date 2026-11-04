@@ -20,6 +20,7 @@ Status: **NOT STARTED** (only setup facts below). This is filled in only from re
 - Official class run on passages 0–2 (`--impl official --limit 3`): `results/raw/v1_selfcheck_scores_official.jsonl`
 - Batched scorer on the same passages: **max |diff| = 2.03e-7, mean 7.19e-8** over 25 sentence scores. **VERIFIED: equivalent.**
 - Speed on the Apple GPU: about 4 s per pair for whole passages, so the full V1-NLI is impractical locally (PC-001). Unigram runs on CPU.
+- **Scope of V1 (PC-002, student decision):** Unigram is reproduced on the full benchmark. NLI is validated by equivalence to the official implementation only. The published NLI AUC-PR (92.50) is **not re-measured**, and the paper states this as a limitation.
 | SelfCheck-NLI NonFact AUC-PR | 92.50 (README) / _paper_ | | |
 | SelfCheck-Unigram (max) NonFact AUC-PR | 85.63 (README) / _paper_ | | |
 | Factual AUC-PR, PCC | README table | | |

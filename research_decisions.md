@@ -203,7 +203,14 @@ Reason: The student asked to run without Colab. On the local Apple GPU, NLI over
 Why E1's validity does not depend on V1-NLI: E1 uses the same checkpoint, pair encoding and contradiction softmax as `SelfCheckNLI`. The batched scorer was shown **numerically identical** to the official class on 3 WikiBio passages (25 sentence scores, max |diff| 2.0e-7, mean 7.2e-8; `--check-equivalence`). The label order on MPS was re-checked (0.0002 / 0.9997). V1-NLI's remaining purpose is to confirm the published 92.50 with this package/model, a check of the upstream claim, not of our code.
 Were any main-set results viewed before this change? **No.** It was decided before E1 produced output.
 Affected results / reruns: none. If V1-NLI later misses its target, E1's NLI results are reported with that caveat.
-Git commit: (this commit)
+Git commit: ff7cae7
+
+### PC-002 | V1-NLI full-benchmark reproduction dropped (student decision)
+Date: 2026-11-04
+Change: V1 = (a) SelfCheck-Unigram reproduced on the full benchmark against the pre-registered ±2.0 AUC-PR, plus (b) the NLI scorer shown numerically identical to the official `SelfCheckNLI` (PC-001). The published NLI figure (92.50) is **not** re-measured.
+Reason: Student instruction, 2026-11-04: "report V1 as Unigram reproduced plus the NLI scorer proven identical to the official code". V1-NLI needs about 40 h on the local GPU or a Colab session, which the student chose not to use.
+Were any main-set results viewed before this change? No (E1 still running).
+How it is reported: the paper's baseline section states that the NLI baseline is validated by implementation equivalence, not by reproducing the published number, and lists this as a limitation.
 
 ---
 
