@@ -284,9 +284,10 @@ Change: RQ2 moves from E2 (dropped, PC-004) to DS-1, at no generation cost. Regi
 Reason: student request ("do RQ2"). Uses ~190 OpenAlex searches.
 Were any main-set results viewed before this change? E1 yes. Familiarity data: none fetched.
 
-### PC-006 | R1 reported on 888 of 950 main-set references (API daily limit)
+### PC-006 | R1 reported on 888 of 950 main-set references (API daily limit) — completed on all 950, 2026-11-05
 Date: 2026-11-04
 Change: R1 (and the post-hoc label-agreement check that depends on it) uses the 888 Llama-2-7B main-set references, in 177 of 190 topics, whose oracle lookups are complete in the cache. The other 62 references (the last 13 topics in file order) were not labelled.
 Reason: the OpenAlex daily allowance ($1 with the student's free key) was exhausted (HTTP 429, `retry-after: 28656` s). Student decision: "finish tonight on 888" rather than wait ~8 h for the reset.
 Were R1 results viewed before this change? **No.** The R1 confusion matrix and κ had not been computed on the main set. Only the pilot R1 had been seen.
 How it is reported: n = 888 / 177 topics is stated wherever R1 numbers appear. The missing topics are a contiguous tail in the released file's order, not chosen by any property of the data. Rerunning `scripts/13_r1_oracle_relabel.py` after the reset completes R1 from the cache.
+Resolution (2026-11-05): after the allowance reset, `scripts/13_r1_oracle_relabel.py --split main --model llama-2-7b-chat` queried the remaining 62 references and `scripts/17_posthoc_label_agreement.py` was rerun. R1 and the post-hoc check now use all 950 references in 190 topics (0 unlabelled). κ = 0.724 (n = 694; was 0.720, n = 649). The agreement subset grows from 581 to 622 references. Judge AUROCs on it are J-LM 0.555, J-NLI 0.619, J-STR 0.536, and J-NLI − J-LM is +0.064 [−0.004, 0.129]. That difference is still not significant, so no conclusion changes. The paper, README and this entry now report 950. The 888-reference outputs are kept in git history (commit d4602af).
