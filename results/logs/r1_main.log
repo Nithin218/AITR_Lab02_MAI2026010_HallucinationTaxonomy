@@ -16,3 +16,12 @@
   751/950
   801/950
   851/950
+  901/950
+
+tau=90.0, partial band=[75.0, 90.0)
+status        found  not_found  partial  All
+bing                                        
+grounded        135         67       95  297
+hallucinated      5        487      161  653
+All             140        554      256  950
+Cohen's kappa (Bing vs oracle, partial excluded, n=694): 0.724

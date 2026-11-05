@@ -29,11 +29,11 @@ The paper reproduces Agrawal et al.'s reference-hallucination consistency checks
 ## Prioritised revision checklist
 | # | Concern | Action | Status |
 |---|---|---|---|
-| 1 | M2 | Post-hoc E1 on the Bing–oracle agreement subset (Llama-2-7B) after R1 | pending R1 |
+| 1 | M2 | Post-hoc E1 on the Bing–oracle agreement subset (Llama-2-7B) after R1 | done (§5.3; all 950 refs after PC-006) |
 | 2 | M1 | Rewrite §3 and §5.2: all six registered, multiplicity stated | done in revision |
 | 3 | M3 | Soften the mechanism claim; add alternatives | done in revision |
 | 4 | m1, m3, m5, m6 | Text and bib additions | done in revision |
-| 5 | m4 | Check the table width in the compiled PDF | after compile |
+| 5 | m4 | Check the table width in the compiled PDF | done (0 overfull boxes, tectonic 2026-11-05) |
 | 6 | m2 | Add the extreme-count example | done in revision |
 
 ## Author-response table

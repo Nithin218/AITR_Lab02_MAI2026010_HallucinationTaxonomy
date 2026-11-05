@@ -7,6 +7,7 @@
 \acmBooktitle{AI Tools for Research -- Post-Mid-Semester Evaluation (2026)}
 
 \usepackage{booktabs}
+\usepackage{xurl}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{enumitem}
@@ -187,7 +188,7 @@ OpenAlex counts for the 190 leaf phrases range from 1{,}876 to 35.1 million work
 \end{itemize}
 
 \section{Reproducibility and AI Use}
-The repository contains the frozen protocol, all decision and protocol-change records, the scripts that produce every table and figure from cached data, unit tests, environment logs and exact package versions. V2, E1 and RQ2 run from the released data on a laptop (E1: about one hour on an Apple-silicon GPU); R1 is limited by the OpenAlex and Crossref rate limits, and all API responses are cached so reruns need no network. AI assistance (Claude Code) was used for literature search, code generation, debugging and drafting; every AI-proposed source was checked against its primary page, every number in this paper comes from a logged run, and the AI-assistance log records the cases where verification changed the work, including an overclaimed novelty framing, a name parser that failed on real answer formats, and the auto-flip in the original AUC procedure.
+The repository (\url{https://github.com/Nithin218/AITR_Lab02_MAI2026010_HallucinationTaxonomy}, MIT licence) contains the frozen protocol, all decision and protocol-change records, the scripts that produce every table and figure from cached data, unit tests, environment logs and exact package versions. V2, E1 and RQ2 run from the released data on a laptop (E1: about one hour on an Apple-silicon GPU); R1 is limited by the OpenAlex and Crossref rate limits, and all API responses are cached so reruns need no network. AI assistance (Claude Code) was used for literature search, code generation, debugging and drafting; every AI-proposed source was checked against its primary page, every number in this paper comes from a logged run, and the AI-assistance log records the cases where verification changed the work, including an overclaimed novelty framing, a name parser that failed on real answer formats, and the auto-flip in the original AUC procedure.
 
 \section{Conclusion}
 Replacing the LM judge of a reference-consistency check with an external NLI model does not rescue detection for small models: on Llama-2-7B every judge stays near chance, and on larger models the NLI judge is worse than the LM it replaces. A model-free name-overlap judge is as good as the LM judge throughout. This is consistent with the small-model failure lying in the sampled answers rather than the judge. Future work should focus on testing citation verification across non-computer-science domains, evaluating newer small open models, exploring alternative decoding strategies, checking whether models support the specific claims made by cited works rather than just their existence, and verifying references against external bibliographic databases rather than relying solely on self-consistency.
